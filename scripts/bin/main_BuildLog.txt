@@ -1,0 +1,20 @@
+parsing
+flex pass 1
+flex pass 2
+Output pass
+Writing prg file: C:\Users\Nick\Dropbox\C64\Caveman (Lionel)\scripts\bin\main.prg
+
+Memory Map
+----------
+Default-segment:
+  *$0002-$001e Temp vars zero page
+  $1000-$1022 BASIC Stub
+  $1023-$138f Entry
+  $1400-$18c8 Lionel
+  $2000-$2727 Title Charset
+  $2800-$2fff Charset
+  $3000-$3a4c Screen data
+  $4000-$549e Code
+
+Writing Vice symbol file: C:\Users\Nick\Dropbox\C64\Caveman (Lionel)\scripts\bin\main.vs
+Writing Symbol file: main.sym
