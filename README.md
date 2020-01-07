@@ -1,4 +1,4 @@
-This game is written in 6502 in KickAssembler/Sublime Text for the Commodore 64, VIC20, Plus/4 and PET. 
+This game is written in 6502 in KickAssembler/Sublime Text for the Commodore 64, VIC20, Plus/4 and PET. Currently only the VIC20 and Plus/4 versions are complete, C64 should run but has no sound.
 
 It is the first game written using my cross-platform library called 'Lionel'. 
 
