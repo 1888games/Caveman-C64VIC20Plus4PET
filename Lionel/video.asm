@@ -308,8 +308,8 @@ VIDEO: {
 
 	Loop: 
 
+		inc RANDOM.RandomAdd
 
-	
 		lda VIDEO.RasterLine
 		cmp RasterTarget
 		bne Loop

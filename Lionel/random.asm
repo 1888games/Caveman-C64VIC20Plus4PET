@@ -1,6 +1,7 @@
 RANDOM:{
 
 
+    RandomAdd: .byte 0 
 
 	C64: {
 
@@ -8,33 +9,19 @@ RANDOM:{
         .if (target == "C64") {
             lda seed
             beq doEor
-            asl
+            
             beq noEor
             bcc noEor
         doEor:    
             eor #$1d
             eor $dc04
             eor $dd04
-        noEor:  
+        noEor: 
             sta seed
+            adc RandomAdd
             rts
         seed:
             .byte $62
-
-
-        Init: 
-            lda #$ff
-            sta $dc05
-            sta $dd05
-            lda #$7f
-            sta $dc04
-            lda #$37
-            sta $dd04
-
-            lda #$91
-            sta $dc0e
-            sta $dd0e
-            rts
 
         }
     }
@@ -55,6 +42,8 @@ RANDOM:{
 
         }
 
+         adc RandomAdd
+
         rts
 
     }
@@ -62,7 +51,19 @@ RANDOM:{
     Initialise: {
 
     	.if (target == "C64") {
-    		jsr C64.Init
+
+    	    lda #$ff
+            sta $dc05
+            sta $dd05
+            lda #$7f
+            sta $dc04
+            lda #$37
+            sta $dd04
+
+            lda #$91
+            sta $dc0e
+            sta $dd0e
+            rts
     	}
 
 
@@ -86,6 +87,7 @@ RANDOM:{
        .if(target == "264") {
         
             lda $ff1e
+            adc RandomAdd
        }
 
        rts

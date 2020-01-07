@@ -3,7 +3,7 @@
 // 264 - C16, C116, Plus4
 // VIC - VIC 20
 
-.var target = "264"
+.var target = "C64"
 #import "../Lionel/zeroPage.asm"
 
 MAIN: {
@@ -15,6 +15,15 @@ MAIN: {
 BASICStub(Entry,"Caveman")
 
 //exomizer sfx sys -t 64 -x "inc $d020" -o yakf.exo yakf.prg
+  // 20: Commodore Vic20, unexpanded memory.
+  //        23: Commodore Vic20, 3kB memory expansion.
+  //        52: Commodore Vic20, 32kB memory expansion.
+  //        55: Commodore Vic20  32+3kB memory expansion.
+  //        16: Commodore c16
+  //         4: Commodore plus4.
+  //        64: Commodore c64. (The default target)
+  //       128: Commodore c128.
+  // 	   4032 :PET
 
 Entry:		
 	
@@ -61,6 +70,7 @@ WaitingForFire: 		.byte 1
 
 
 
+
 TitleScreen: {
 
 
@@ -95,14 +105,16 @@ TitleScreen: {
 
 TitleLoop: {
 
-	.if (target == "VIC") {
+.if (target == "VIC") {
 		WaitForRasterLine(40)
 	}
-	else {
-		WaitForRasterLine(50)
+	.if(target == "C64") {
+		WaitForRasterLine(30)
 	}
 
-
+	.if(target == "264") {
+		WaitForRasterLine(200)
+	}
 
 
 	jsr SOUND.Update
@@ -207,8 +219,12 @@ InstructionsLoop:
 	.if (target == "VIC") {
 		WaitForRasterLine(40)
 	}
-	else {
-		WaitForRasterLine(50)
+	.if(target == "C64") {
+		WaitForRasterLine(30)
+	}
+
+	.if(target == "264") {
+		WaitForRasterLine(200)
 	}
 
 	jsr SOUND.Update
@@ -549,8 +565,12 @@ Loop:
 	.if (target == "VIC") {
 		WaitForRasterLine(40)
 	}
-	else {
-		WaitForRasterLine(50)
+	.if(target == "C64") {
+		WaitForRasterLine(30)
+	}
+
+	.if(target == "264") {
+		WaitForRasterLine(200)
 	}
 
 	jsr SOUND.Update
