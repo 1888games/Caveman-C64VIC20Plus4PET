@@ -20,6 +20,7 @@ CAVEMAN:{
 	.label MoveRightSFXId = 2
 	.label StealEggSFXId = 3
 	.label PutEggSFXId = 4
+	.label GetAxeSFXId = 13
 
 
 
@@ -236,9 +237,6 @@ CAVEMAN:{
 			cmp EGG.EggStolen
 			beq NoEgg
 
-			ldy #StealEggSFXId
-			jsr SOUND.StartSong
-			//jsr SOUND.SFX_STEAL
 			jmp Complete
 
 
@@ -395,6 +393,9 @@ CAVEMAN:{
 
 		lda #ONE
 		sta AXE.IsCarrying
+
+		ldy #GetAxeSFXId
+		jsr SOUND.StartSong
 
 		NoPickup:
 		rts

@@ -100,19 +100,23 @@ INPUT: {
 
 	ReadC64Joystick: {
 
-		cpy #ZERO
-		beq PortOne
+		.if(target == "C64") {
 
-		lda $dc00
-		jmp StoreReading
+			cpy #ZERO
+			beq PortOne
 
-		PortOne:
+			lda $dc00
+			jmp StoreReading
 
-		lda $dc01
+			PortOne:
 
-		StoreReading:
+			lda $dc01
 
-		sta JOY_READING, y
+			StoreReading:
+
+			sta JOY_READING, y
+
+		}
 
 		rts
 	}
@@ -120,73 +124,63 @@ INPUT: {
 
 	Read264Joystick: {
 
-		.label temp = TEMP7
-		.label JOYSTICKSELECT = TEMP8
 
-		lda Plus4Select, y
-		sta JOYSTICKSELECT
+		.if(target == "264") {
 
-		.break
+			.label temp = TEMP4
+			.label JOYSTICKSELECT = TEMP8
 
-		GetJoystick:
+			lda Plus4Select, y
+			sta JOYSTICKSELECT
 
-		jsr gatherJoystick1
-		sta temp
-		jmp gatherJoystick2
-
-
-		gatherJoystick1:
-			lda #$ff
-			sta $fd30
-			lda JOYSTICKSELECT
-			sta $ff08
-			lda $ff08
-	
-		rts
-
-		gatherJoystick2:
+			GetJoystick:
 
 			jsr gatherJoystick1
-			cmp temp
-			bne GetJoystick
-
-		sta JOY_READING, y
-
-		cmp #255
-		beq Nothing
-
-		jsr Horse
+			sta temp
+			jmp gatherJoystick2
 
 
-		Nothing:
+			gatherJoystick1:
+				lda #$ff
+				sta $fd30
+				lda JOYSTICKSELECT
+				sta $ff08
+				lda $ff08
+		
+				rts
 
+			gatherJoystick2:
 
+				jsr gatherJoystick1
+				cmp temp
+				bne GetJoystick
+
+			sta JOY_READING, y
+
+		}
 
 		rts
 
 	}
 
-
-	Horse: {
-
-		.break
-
-		rts
-	}
 
 
 	ReadVICJoystick: {
 
-		sta $9113
-		lda #127
-		sta $9122
 
-		lda JOY_PORT_UDLF
-		sta JOY_READING, y
+		.if(target == "VIC") {
 
-		lda JOY_PORT_RIGHT
-		dey
-		sta JOY_READING, y
+			sta $9113
+			lda #127
+			sta $9122
+
+			lda JOY_PORT_UDLF
+			sta JOY_READING, y
+
+			lda JOY_PORT_RIGHT
+			dey
+			sta JOY_READING, y
+		}
 
 		rts
 	}
@@ -194,6 +188,10 @@ INPUT: {
 
 
 	ReadPETKeyboard: {
+
+		.if(target == "PET") {
+
+		}
 
 		rts
 	}
@@ -329,7 +327,7 @@ INPUT: {
 			jsr INPUT.ReadC64Joystick
 		}
 
-		.if(target == "264") {
+		.if(target == "264") {	
 
 			jsr INPUT.Read264Joystick
 		}
@@ -361,51 +359,3 @@ INPUT: {
 }
 
 
-
-
-
-.macro ReadJoystick(port) {
-
-		ldy port
-		dey
-		sty INPUT.PortToRead
-		
-		lda #ZERO
-		sta INPUT.JOY_FIRE_NOW, y
-		sta INPUT.JOY_RIGHT_NOW, y
-		sta INPUT.JOY_LEFT_NOW, y
-		sta INPUT.JOY_UP_NOW, y
-		sta INPUT.JOY_DOWN_NOW, y
-
-		.if(target == "C64") {
-
-			jsr INPUT.ReadC64Joystick
-		}
-
-		.if(target == "264") {
-
-			jsr INPUT.Read264Joystick
-		}
-
-		.if(target == "VIC") {
-
-			jsr INPUT.ReadVICJoystick
-		}
-
-
-		.if(target == "PET") {
-
-			jsr INPUT.ReadPETKeyboard
-
-		}
-
-		else {
-
-
-			jsr INPUT.CalculateButtons
-		}
-
-
-
-
-	}

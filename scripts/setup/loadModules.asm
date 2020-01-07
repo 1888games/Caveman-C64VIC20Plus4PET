@@ -1,7 +1,7 @@
 //*=$7000 "Import"
 
 .if (target == 264) {
-	*=$4000 "Code"
+	*=$3b00 "Code"
 }
 
 .if (target == "VIC") {
@@ -34,7 +34,7 @@
  #import "interrupts/caveman.asm"
 
   .if (target == 264) {
-	//*=$4000 "Code"
+// "Code"
 }
 
  #import "interrupts/egg.asm"

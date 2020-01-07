@@ -24,11 +24,14 @@ Entry:
 	jsr VIC20.ConvertCharacterSet
 	jsr VIC20.ConvertTitleSet
 
+
 	jsr MAPLOADER.Initialise
 	jsr TITLE_LOADER.Initialise
 	jsr INS_LOADER.Initialise
+	jsr SOUND.Initialise
 
 	Set256CharMode264()
+	Set24RowMode()
 	SetMultiColourMode(1)
 	SetVICRows(23)
 
@@ -60,8 +63,6 @@ WaitingForFire: 		.byte 1
 
 TitleScreen: {
 
-	ldy #0
-	jsr SOUND.StartSong
 
 	SetBorderColour(0, 5)
 	SetBackgroundColour(0,5)
@@ -80,9 +81,15 @@ TitleScreen: {
 
 	jsr TITLE_LOADER.DrawMap
 
+	ldy #0
+	jsr SOUND.StartSong
+	
+	
 	jmp TitleLoop
 
 }
+
+
 
 
 
@@ -95,10 +102,14 @@ TitleLoop: {
 		WaitForRasterLine(50)
 	}
 
+
+
+
 	jsr SOUND.Update
 
 	ldy #2
 	jsr INPUT.ReadJoystick
+
 	lda INPUT.FIRE_UP_THIS_FRAME, y
 	bne Instructions
 
@@ -110,6 +121,8 @@ TitleLoop: {
 
 
 Instructions: {
+
+
 
 	ClearScreen()
 
@@ -127,11 +140,12 @@ Instructions: {
 
 ColourLastRow: {
 
-
+	.if(target == "VIC") {
 			
 		.label COLOR_ADDRESS = VECTOR4
 		.label SCREEN_ADDRESS = VECTOR5
 		 .label RowOffset = TEMP7
+		
 
 		//get row for this position
 		ldy #21
@@ -180,6 +194,8 @@ ColourLastRow: {
 			jmp Loop
 
 		Finish:
+
+	}
 
 			rts
 

@@ -14,14 +14,17 @@ LEVELDATA:{
 
 	.label MaxLevels = 10
 
-	ScreenPosition: .byte 71
+	ScreenPosition: .byte 25
 
 
 	SetupNextLevel: {
+
+		.if(target == "VIC") {
+			lda #71
+			sta ScreenPosition
+		}
 	
 		ldx NextLevelID
-
-		ldx #3
 		
 		lda BirdActive, x
 		sta BIRD.IsActive
@@ -93,9 +96,15 @@ LEVELDATA:{
 		sta (SCREEN_RAM), y
 
 		lda #ONE
+
+		.if(target == "264") {
+				clc
+				adc #96
+			}
+
 		sta (COLOR_RAM), y
 		dey
-		sta (COLOR_RAM)+ 25, y
+		sta (COLOR_RAM), y
 
 		inc Ones
 		lda Ones

@@ -7,18 +7,23 @@ IRQ: {
 
 		Init: {
 
-			sei 	// disable interrupt flag
-			lda VIC.INTERRUPT_CONTROL
-			ora #%00000001		// turn on raster interrupts
-			sta VIC.INTERRUPT_CONTROL
 
-			lda #<MainIRQ
-			ldx #>MainIRQ
-			ldy #MainIRQLine
-			jsr SetNextInterrupt
+			.if (target == "C64") {
 
-			asl VIC.INTERRUPT_STATUS
-			cli
+				sei 	// disable interrupt flag
+				lda VIC.INTERRUPT_CONTROL
+				ora #%00000001		// turn on raster interrupts
+				sta VIC.INTERRUPT_CONTROL
+
+				lda #<MainIRQ
+				ldx #>MainIRQ
+				ldy #MainIRQLine
+				jsr SetNextInterrupt
+
+				asl VIC.INTERRUPT_STATUS
+				cli
+
+			}
 
 			rts
 

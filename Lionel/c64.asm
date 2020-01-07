@@ -38,73 +38,75 @@ C64: {
 
 	PlayNote: {
 
-		.label address = VECTOR1
+		.if(target == "C64") {
 
-		cpx #1
-		beq Channel2
+			.label address = VECTOR1
 
-		cpx #2
-		beq Channel3
+			cpx #1
+			beq Channel2
 
-
-		Channel1:
-
+			cpx #2
+			beq Channel3
 
 
-		Channel2:
-
-
-		Channel3:
-
-
-		// txa
-		// asl
-		// tax
-
-		// lda #%00100001
-		// sta (Control, x)
-
-		// lda #%00000000
-		// sta (AttDec, x)
-
-		// lda #%00000100
-		// sta (Sustain, x)
-
-		// lda SOUND.NoteValue
-		// sta (Frequency, x)
-		// lda SOUND.NoteValue + 1
-		// sta (Frequency + 1, x)
-
-		// txa
-		// lsr
-		// tax
-
-		Finish:
-
-		// lda #%00000111
-		// sta VOICE_1_FREQUENCY
-		// lda #%11111111
-		// sta VOICE_1_FREQUENCY + 1
+			Channel1:
 
 
 
-		// lda #%00100001
-		// sta VOICE_1_CONTROL
-
-		// lda #%00000000
-		// sta VOICE_1_ATTDEC
-
-		// lda #%00100100
-		// sta VOICE_1_SUSTAIN
-
-		// lda #%00001111
-		// sta VOLUME_FILTER
+			Channel2:
 
 
-		// lda #%00100000
-		//sta VOICE_1_CONTROL
+			Channel3:
 
-		
+
+			// txa
+			// asl
+			// tax
+
+			// lda #%00100001
+			// sta (Control, x)
+
+			// lda #%00000000
+			// sta (AttDec, x)
+
+			// lda #%00000100
+			// sta (Sustain, x)
+
+			// lda SOUND.NoteValue
+			// sta (Frequency, x)
+			// lda SOUND.NoteValue + 1
+			// sta (Frequency + 1, x)
+
+			// txa
+			// lsr
+			// tax
+
+			Finish:
+
+			// lda #%00000111
+			// sta VOICE_1_FREQUENCY
+			// lda #%11111111
+			// sta VOICE_1_FREQUENCY + 1
+
+
+
+			// lda #%00100001
+			// sta VOICE_1_CONTROL
+
+			// lda #%00000000
+			// sta VOICE_1_ATTDEC
+
+			// lda #%00100100
+			// sta VOICE_1_SUSTAIN
+
+			// lda #%00001111
+			// sta VOLUME_FILTER
+
+
+			// lda #%00100000
+			//sta VOICE_1_CONTROL
+
+		}
 
 		rts
 	}
@@ -141,14 +143,19 @@ C64: {
 
 	SetC64VICBank: {
 
-		.label ValueToSave = TEMP1
+		.if(target == "C64") {
 
-		sta ValueToSave
 
-		lda C64.Serial_Bus_Port_A
-		and #%11111100
-		ora ValueToSave
-		sta C64.Serial_Bus_Port_A
+			.label ValueToSave = TEMP1
+
+			sta ValueToSave
+
+			lda C64.Serial_Bus_Port_A
+			and #%11111100
+			ora ValueToSave
+			sta C64.Serial_Bus_Port_A
+
+		}
 
 		rts
 
@@ -247,13 +254,10 @@ C64: {
 	.var C64CharRamLocations = Hashtable()
 	.var NoteValuesC64 = Hashtable()
 
-
 	.var currentAddress = $0000
 	.var currentBank = 0
 
 	.if(target == "C64") {
-
-
 
 	.eval C64ScreenRamLocations.put($0000, 0)
 	.eval C64ScreenRamLocations.put($0400, 1)

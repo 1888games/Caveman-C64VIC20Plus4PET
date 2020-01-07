@@ -71,8 +71,12 @@ MAP_TILES:
 	}
 
 TITLE_TILES:
-	.if(target == "C64" || target == "264") {
+	.if(target == "C64") {
 		.import binary "../assets/title/x64/title_tiles.bin"
+	}
+
+	.if(target == "264") {
+		.import binary "../assets/title/x64/title_tiles_p4.bin"
 	}
 
 	.if(target == "VIC") {
@@ -122,8 +126,12 @@ MAP:
 
 TITLE_MAP:
 
-	.if(target == "C64" || target == "264") {
+	.if(target == "C64") {
 		.import binary "../assets/title/x64/title_map.bin"
+	}
+
+	.if(target == "264") {
+		.import binary "../assets/title/x64/title_map_p4.bin"
 	}
 
 	.if(target == "VIC") {

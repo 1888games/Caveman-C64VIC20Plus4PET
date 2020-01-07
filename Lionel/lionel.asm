@@ -1,7 +1,7 @@
 
 
 .if (target =="264") {
-	*=$1400 "Lionel"
+	*=$5100 "Lionel"
 }
 
 .if(target == "C64") {
@@ -18,9 +18,6 @@
 .label ONE=1
 
 LIONEL:{
-
-
-
 
  #import "basicUpstart.asm"
  #import "video.asm"

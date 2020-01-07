@@ -48,34 +48,13 @@
  .eval rasterLineRegisters.put("VIC",$9004)
  .eval rasterLineRegisters.put("PET",$9999)
 
+ .var verticalControlRegisters = Hashtable()
+ .eval verticalControlRegisters.put("C64",$d011)
+ .eval verticalControlRegisters.put("264",$FF06)
+ .eval verticalControlRegisters.put("VIC",$9999)
+ .eval verticalControlRegisters.put("PET",$9999)
+
  .label C64_ScreenControl = $d011
-
-
-
-// d011
-//  Bit 7 (weight 128) is the most significant bit of the VIC's nine-bit raster register (see address 53266).
-// Bit 6 controls extended color mode; if set to "1", each individual character on the text screen can have one of four background colors. Is by default set to "0", for a single common background color for all on-screen characters.
-// Bit 5 selects either the text screen ("0") or high resolution graphics ("1").
-// Bit 4 controls whether the screen area is visible or not: By default this bit is set to "1", rendering the screen area visibly, but by setting it to "0", the entire screen assumes the color of the screen color (as per 53280).
-// Bit 3 selects 25 (when set to "1") or 24 (when set to "0") visible character lines on the text screen. Mostly used in conjunction with vertical scrolling; see next item.
-// Bit 0–2 is used for vertical pixel-by-pixel scrolling of the text or high resolution graphics: Together these three bits form a binary number, indicating how many pixels to "shift" the entire text screen downwards.
-
-
-
-
-// decect vic screen ram
- // CR2: $9002 - decimal 36866. Usual value decimal 150.
- // A dual function register.
- // The first seven bits fo this register determine the number of columns in
- // the TV display. Normally this will be the expected value of 22.
- // Bit 7 of this register is used to hold the value for line 9 of the address
- // for the video RAM. On an unexpanded VIC 20 as the address of the Video
- // RAM is $1E00 and therefore this bit 7 is set, however when the video RAM is
- // moved to $1000 then bit 7 becomes reset.
-
- // Note: Bit 7 of this register also indicates where the Colour RAM starts. If
- // this bit is 1, colour memory starts at location 38400. If this bit is 0,
- // colour memory starts at location 37888. Use the following formula:
 
 
 VIDEO: {
@@ -108,8 +87,6 @@ VIDEO: {
 	CurrentExtendedColour1: .byte 0
 	CurrentExtendedColour2: .byte 0
 
-
-
 	Initialise: 
 
 		.label Border_Colour = borderColourRegisters.get(target)
@@ -118,6 +95,7 @@ VIDEO: {
 		.label Extended_Colour_2 = extendedColour2Registers.get(target)
 		.label MultiColourHorizontal = multiColourHorizontalRegisters.get(target)
 		.label RasterLine = rasterLineRegisters.get(target)
+		.label VerticalControl = verticalControlRegisters.get(target)
 
 
 		lda #<defaultScreenRAM.get(target)
@@ -338,7 +316,6 @@ VIDEO: {
 
 	Finish:
 
-		.break
 
 }
 
@@ -494,6 +471,22 @@ VIDEO: {
 
 
 
+
+
+.macro Set24RowMode(){
+
+	.if(target == "264" || target == "C64") {
+
+		lda VIDEO.VerticalControl
+		and #%11110000
+		ora #%00000111
+		sta VIDEO.VerticalControl		// set to 24 row mode
+
+	}
+}
+
+
+	
 
 
 

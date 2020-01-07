@@ -47,7 +47,7 @@ Filesystem Image: Unknown disk image `bin/main.prg'.
 Tape: Error - Cannot open file `bin/main.prg'
 AUTOSTART: Loading PRG file `bin/main.prg' with direct RAM injection.
 AUTOSTART: Resetting the machine to autostart '*'
-Sound: Opened device `dx', speed 44100Hz, fragment size fms, buffer size 101ms
+Sound: Opened device `dx', speed 44100Hz, fragment size fms, buffer size 200ms
 reSID: MOS6581, filter on, sampling rate 44100Hz - resampling, pass to 19845Hz
 AUTOSTART: Turning Warp mode on
 AUTOSTART: `bin/main.prg' recognized as program/p00 file.
@@ -56,13 +56,9 @@ Main CPU: RESET.
 RS232DEV: rs232dev_set_status: rts:off dtr:off
 RS232DEV: rs232dev_set_bps: bps: 10
 Drive 8: RESET.
-AUTOSTART: Injecting program data at $1000 (size $449f)
+AUTOSTART: Injecting program data at $1000 (size $4428)
 AUTOSTART: Ready
 AUTOSTART: Turning Warp mode off
 AUTOSTART: Starting program.
 Skip line 312 312
 AUTOSTART: Done.
-Writing configuration file `C:\Users\Nick\AppData\Roaming\vice\vice.ini'.
-
-Exiting...
-Sound: Closing device `dx'

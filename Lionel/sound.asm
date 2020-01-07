@@ -25,7 +25,8 @@ SOUND:{
 	EndNoteID: .byte 0, 0, 0
 	CurrentNoteID: .byte 0, 0, 0
 	CurrentNoteValue: .byte 0, 0, 0
-	SongIDs: .byte 99, 99, 99
+	SongIDs: .byte 99, 99, 99	
+	Cooldown: .byte 0
 
 	.label ObjectID = TEMP1
 	.label StartAddress = VECTOR1
@@ -63,6 +64,11 @@ SOUND:{
 		.if(target == "264") {
 			lda #2
 			sta MaxChannels
+
+			lda TED_CONTROL
+			ora #%00000011
+			sta TED_CONTROL  // set volumne
+
 		}
 
 
@@ -82,6 +88,15 @@ SOUND:{
 
 		:StoreState()
 
+		
+		lda SOUND_DATA.SongLength, y
+		cmp #4
+		bcc DontOverride
+
+		ldx #0
+		jmp UseThisChannel
+
+		DontOverride:
 
 		sty ObjectID
 
@@ -130,15 +145,15 @@ SOUND:{
 
 		//.break
 
+
 		:StoreState()
 
-		.label CurrentNote = TEMP6
+		.label CurrentNote = TEMP12
 
 		ldx #0
 
-		Loop:
 
-		
+		Loop:
 
 			lda SongIDs, x
 			cmp #99
@@ -187,7 +202,7 @@ SOUND:{
 			EndLoop:
 
 				inx
-				cpx #3
+				cpx MaxChannels
 				beq Finish
 				jmp Loop
 
@@ -208,7 +223,6 @@ SOUND:{
 
 		.if(target == "C64") {
 
-			.break
 			jsr C64.PlayNote
 		}
  
@@ -217,6 +231,10 @@ SOUND:{
 			jsr VIC20.StopNote
 		}
 
+		.if(target == "264") {
+
+			jsr PLUS4.StopNote
+		}
 
 		rts
 
@@ -227,13 +245,17 @@ SOUND:{
 
 		.if(target == "C64") {
 
-			.break
 			jsr C64.PlayNote
 		}
  
 		.if(target == "VIC") {
 
 			jsr VIC20.PlayNote
+		}
+
+		.if(target == "264") {
+
+			jsr PLUS4.PlayNote
 		}
 
 
@@ -277,7 +299,8 @@ SOUND:{
 		lda (StartAddress), y
 		sta NoteRemaining, x
 
-	
+		
+		//.break
 
 		lda CurrentNoteValue, x
 
@@ -288,6 +311,8 @@ SOUND:{
 		inx
 		lda NoteValues, x
 		sta NoteValue + 1
+
+		//.break
 
 		ldx CurrentChannel
 

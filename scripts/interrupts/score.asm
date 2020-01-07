@@ -16,7 +16,7 @@ SCORE:{
 	ScoreToAdd: .byte 0
 	CharacterSetStart: .byte 226
 	ScreenPosition: .byte 71
-	BestPosition: .byte 41
+	BestPosition: .byte 31
 
 	ExtraLifeLSB: .byte 208
 	ExtraLifeMSB: .byte 32

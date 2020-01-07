@@ -24,26 +24,31 @@ VIC20: {
 
 	PlayNote: {
 
-		txa
-		pha
+
+		.if (target == "VIC") {
+
+			txa
+			pha
 
 
-		asl
-		tax
-		lda Channels, x
-		sta Address + 1
-		inx
-		lda Channels, x
-		sta Address + 2
+			asl
+			tax
+			lda Channels, x
+			sta Address + 1
+			inx
+			lda Channels, x
+			sta Address + 2
 
-		lda <SOUND.NoteValue
+			lda <SOUND.NoteValue
 
-		Address:
-		
-		sta $BEEF
+			Address:
+			
+			sta $BEEF
 
-		pla
-		tax
+			pla
+			tax
+
+		}
 
 		rts
 	}
@@ -51,25 +56,29 @@ VIC20: {
 	StopNote: {
 
 
-		txa
-		pha
+		.if (target == "VIC") {
+	
+			txa
+			pha
 
-		asl
-		tax
-		lda Channels, x
-		sta Address + 1
-		inx
-		lda Channels, x
-		sta Address + 2
+			asl
+			tax
+			lda Channels, x
+			sta Address + 1
+			inx
+			lda Channels, x
+			sta Address + 2
 
-		lda #ZERO
+			lda #ZERO
 
-		Address:
-		
-		sta $BEEF
+			Address:
+			
+			sta $BEEF
 
-		pla
-		tax
+			pla
+			tax
+
+		}
 
 		rts
 
@@ -79,543 +88,543 @@ VIC20: {
 
 		.if (target == "VIC") {
 
-		.label CHAR_ID = TEMP1
-	 	.label BYTE_ID = TEMP2
-	
-		ldx #0
+			.label CHAR_ID = TEMP1
+		 	.label BYTE_ID = TEMP2
+		
+			ldx #0
 
-		ldy #0
-		sty CHAR_ID
+			ldy #0
+			sty CHAR_ID
 
-		lda #ZERO
-		sta BYTE_ID
+			lda #ZERO
+			sta BYTE_ID
 
-		//sjmp Nope
+			//sjmp Nope
 
-		First: {
+			First: {
 
-		Loop2: 
+			Loop2: 
 
-			//.break
+				//.break
 
-			ldy CHAR_ID
+				ldy CHAR_ID
 
-			lda IsMulti, y
-		//	lda #ZERO
-			beq CheckNextChar
+				lda IsMulti, y
+			//	lda #ZERO
+				beq CheckNextChar
 
-			lda CHAR_SET, x
-			tay
+				lda CHAR_SET, x
+				tay
 
-			lda CharLookup, y
-			sta CHAR_SET, x
+				lda CharLookup, y
+				sta CHAR_SET, x
 
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
 
-			NewChar:
+				NewChar:
 
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
 
-			EndLoop:
+				EndLoop:
 
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
 
-		Finish2:
+			Finish2:
 
-		}
+			}
 
-		lda CHAR_ID
-
-		ldx #0
-
-		//jmp Nope
-
-		Second: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMulti, y
-			beq CheckNextChar
-
-			lda CHAR_SET + 256, x
-			tay
-
-			lda CharLookup, y
-			sta CHAR_SET + 256, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-
-		Third: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMulti, y
-			beq CheckNextChar
-
-			lda CHAR_SET + 256, x
-			tay
-
-			lda CharLookup, y
-			sta CHAR_SET + 256, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-
-		Fourth: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMulti, y
-			beq CheckNextChar
-
-			lda CHAR_SET +256, x
-			tay
-
-			lda CharLookup, y
-			sta CHAR_SET + 256, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-	}
-
-
-	rts
-
-
-	}
-
-	ConvertTitleSet: {
-
-		.if (target == "VIC") {
-
-		.label CHAR_ID = TEMP1
-	 	.label BYTE_ID = TEMP2
-	
-		ldx #0
-
-		ldy #0
-		sty CHAR_ID
-
-		lda #ZERO
-		sta BYTE_ID
-
-		//sjmp Nope
-
-		First: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-
-			lda IsMultiTitle, y
-		//	lda #ZERO
-			beq CheckNextChar
-
-			lda TITLE_CHAR_SET, x
-			tay
-
-			lda CharLookup, y
-			sta TITLE_CHAR_SET, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-
-		lda CHAR_ID
-		ldx #0
-
-		//jmp Nope
-
-		Second: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
-
-			lda TITLE_CHAR_SET + 256, x
-			tay
-
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 256, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-
-		ldx #0
-		Third: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
-
-			lda TITLE_CHAR_SET + 512, x
-			tay
-
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 512, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
+			lda CHAR_ID
 
 			ldx #0
-		Fourth: {
 
-		Loop2: 
+			//jmp Nope
 
-			//.break
+			Second: {
 
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
+			Loop2: 
 
-			lda TITLE_CHAR_SET +768, x
-			tay
+				//.break
 
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 768, x
+				ldy CHAR_ID
+				lda IsMulti, y
+				beq CheckNextChar
 
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
+				lda CHAR_SET + 256, x
+				tay
 
-			NewChar:
+				lda CharLookup, y
+				sta CHAR_SET + 256, x
 
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
 
-			EndLoop:
+				NewChar:
 
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
 
-		Finish2:
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+
+			Third: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMulti, y
+				beq CheckNextChar
+
+				lda CHAR_SET + 256, x
+				tay
+
+				lda CharLookup, y
+				sta CHAR_SET + 256, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+
+			Fourth: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMulti, y
+				beq CheckNextChar
+
+				lda CHAR_SET +256, x
+				tay
+
+				lda CharLookup, y
+				sta CHAR_SET + 256, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+		}
+
+
+		rts
+
 
 		}
-		ldx #0
-		Fifth: {
 
-		Loop2: 
+		ConvertTitleSet: {
 
-			//.break
+			.if (target == "VIC") {
 
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
+			.label CHAR_ID = TEMP1
+		 	.label BYTE_ID = TEMP2
+		
+			ldx #0
 
-			lda TITLE_CHAR_SET +1024, x
-			tay
+			ldy #0
+			sty CHAR_ID
 
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 1024, x
+			lda #ZERO
+			sta BYTE_ID
 
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
+			//sjmp Nope
 
-			NewChar:
+			First: {
 
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
+			Loop2: 
 
-			EndLoop:
+				//.break
 
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
+				ldy CHAR_ID
 
-		Finish2:
+				lda IsMultiTitle, y
+			//	lda #ZERO
+				beq CheckNextChar
 
-		}
+				lda TITLE_CHAR_SET, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+
+			lda CHAR_ID
+			ldx #0
+
+			//jmp Nope
+
+			Second: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
+
+				lda TITLE_CHAR_SET + 256, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 256, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
 
 			ldx #0
-		Sixth: {
+			Third: {
 
-		Loop2: 
+			Loop2: 
 
-			//.break
+				//.break
 
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
 
-			lda TITLE_CHAR_SET +1280, x
-			tay
+				lda TITLE_CHAR_SET + 512, x
+				tay
 
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 1280, x
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 512, x
 
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
 
-			NewChar:
+				NewChar:
 
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
 
-			EndLoop:
+				EndLoop:
 
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
 
-		Finish2:
+			Finish2:
 
+			}
+
+				ldx #0
+			Fourth: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
+
+				lda TITLE_CHAR_SET +768, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 768, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+			ldx #0
+			Fifth: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
+
+				lda TITLE_CHAR_SET +1024, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 1024, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+
+				ldx #0
+			Sixth: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
+
+				lda TITLE_CHAR_SET +1280, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 1280, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+
+			ldx #0
+			Seventh: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
+
+				lda TITLE_CHAR_SET +1536, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 1536, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
+
+			ldx #0
+			Eighth: {
+
+			Loop2: 
+
+				//.break
+
+				ldy CHAR_ID
+				lda IsMultiTitle, y
+				beq CheckNextChar
+
+				lda TITLE_CHAR_SET +1792, x
+				tay
+
+				lda CharLookup, y
+				sta TITLE_CHAR_SET + 1792, x
+
+				CheckNextChar:
+					inc BYTE_ID
+					lda BYTE_ID
+					cmp #8
+					beq NewChar
+					jmp EndLoop
+
+				NewChar:
+
+					inc CHAR_ID
+					lda #0
+					sta BYTE_ID
+
+				EndLoop:
+
+					cpx #255
+					beq Finish2
+					inx
+					jmp Loop2
+
+			Finish2:
+
+			}
 		}
-
-		ldx #0
-		Seventh: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
-
-			lda TITLE_CHAR_SET +1536, x
-			tay
-
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 1536, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-
-		ldx #0
-		Eighth: {
-
-		Loop2: 
-
-			//.break
-
-			ldy CHAR_ID
-			lda IsMultiTitle, y
-			beq CheckNextChar
-
-			lda TITLE_CHAR_SET +1792, x
-			tay
-
-			lda CharLookup, y
-			sta TITLE_CHAR_SET + 1792, x
-
-			CheckNextChar:
-				inc BYTE_ID
-				lda BYTE_ID
-				cmp #8
-				beq NewChar
-				jmp EndLoop
-
-			NewChar:
-
-				inc CHAR_ID
-				lda #0
-				sta BYTE_ID
-
-			EndLoop:
-
-				cpx #255
-				beq Finish2
-				inx
-				jmp Loop2
-
-		Finish2:
-
-		}
-	}
 
 
 	rts
@@ -628,15 +637,15 @@ VIC20: {
 
 .macro SetVICScreenMemory (location) {
 
-		.if(target == "VIC") {
+	.if(target == "VIC") {
 
 
-			lda #<location
-			sta SCREEN_RAM
-			lda #>location
-			sta SCREEN_RAM + 1
+		lda #<location
+		sta SCREEN_RAM
+		lda #>location
+		sta SCREEN_RAM + 1
 
-		}
+	}
 
 }
 
@@ -697,58 +706,66 @@ VIC20: {
 	.eval VICCharRamLocations.put($1800, 14)
 	.eval VICCharRamLocations.put($1C00, 15)
 
-	IsMulti: 	.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 1, 1
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
-			.byte 0, 0, 0, 0, 0, 0, 0, 0
+	IsMulti: 
+
+	.if(target == "VIC") {
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 1, 1
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+
+		}
 
  IsMultiTitle: 	
 
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 0, 1, 1, 1, 1, 1, 1, 0
-				.byte 0, 1, 0, 0, 0, 1, 1, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
+ 	.if(target == "VIC") {
 
-				.byte 1, 1, 1, 0, 1, 1, 1, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 1, 0, 1, 1, 1, 1, 1
-				.byte 0, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 0, 1, 1, 1, 1, 1, 1, 0
+		.byte 0, 1, 0, 0, 0, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
 
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 0, 1, 1, 1, 1, 1, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 0, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 0, 1, 1, 1, 1, 1
+		.byte 0, 1, 1, 1, 1, 1, 1, 1
 
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 0, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 0, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
 
-				.byte 1, 1, 1, 1, 1, 0, 0, 1
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 0, 1, 0, 1, 1, 0, 1
-				.byte 0, 0, 1, 1, 1, 1, 1, 0
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 0, 1, 1, 1, 1, 1, 1
 
-				.byte 1, 1, 1, 1, 1, 1, 1, 1
-				.byte 0, 0, 0, 0, 0, 0, 0, 0
-				.byte 0, 0, 0, 0, 0, 0, 0, 0
-				.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 1, 1, 1, 1, 1, 0, 0, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 0, 1, 0, 1, 1, 0, 1
+		.byte 0, 0, 1, 1, 1, 1, 1, 0
 
-				.byte 0, 0, 0, 0, 0, 0, 0, 0
-				.byte 0, 0, 0, 0, 0, 0, 0, 0
-				.byte 0, 0, 0, 0, 0, 0, 0, 0
-				.byte 0, 1, 1, 1, 1, 1, 1, 1
-				.byte 1, 1, 1, 1, 0, 1, 1, 1
+		.byte 1, 1, 1, 1, 1, 1, 1, 1
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 0, 0, 0, 0, 0, 0, 0
+		.byte 0, 1, 1, 1, 1, 1, 1, 1
+		.byte 1, 1, 1, 1, 0, 1, 1, 1
+	}
 
