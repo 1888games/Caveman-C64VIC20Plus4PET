@@ -197,7 +197,7 @@ AXE:{
 
 		// can't throw if at egg
 		cmp #4
-		beq Finish
+		bcs Finish
 
 
 		lda CAVEMAN.Position

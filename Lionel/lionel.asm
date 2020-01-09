@@ -13,6 +13,11 @@
 
 	*=$2400 "Lionel"
 }
+
+.if(target == "PET") {
+
+	*=$1000 "Lionel"
+}
 .label ZERO= 0
 .label ALL_ON = 255
 .label ONE=1

@@ -1,14 +1,14 @@
-.label CHAR_DATA=$19f6 {
-  .label TypeColours=$1b40
-  .label ObjectType=$1ad2
-  .label DataStart=$19f6
-  .label Sizes=$1b4a {
+.label CHAR_DATA=$3de2 {
+  .label TypeColours=$3f2c
+  .label ObjectType=$3ebe
+  .label DataStart=$3de2
+  .label Sizes=$3f36 {
   }
 }
 .label JOY_DOWN=$2
 .label BaseScreenLocation=$ff14
-.label LIONEL=$1400 {
-  .label Initialise=$170d {
+.label LIONEL=$5100 {
+  .label Initialise=$541f {
   }
 }
 .label TEMP1=$2
@@ -20,196 +20,196 @@
 .label TEMP7=$8
 .label TEMP8=$9
 .label TEMP9=$a
-.label DINO=$2956 {
-  .label DeathUpdate=$29e8 {
-    .label NextLife=$29f8
-    .label Finish=$29fb
+.label DINO=$4d5c {
+  .label DeathUpdate=$4dee {
+    .label NextLife=$4dfe
+    .label Finish=$4e01
   }
-  .label SecondaryFrames=$295f
-  .label HideStun=$29b2 {
+  .label SecondaryFrames=$4d65
+  .label HideStun=$4db8 {
   }
-  .label Position=$2956
+  .label Position=$4d5c
   .label ShowStunSFXId=$6
-  .label StunCounter=$2959
-  .label HandleStun=$2a93 {
-    .label CheckFlash=$2a9d
-    .label Hide=$2aae
-    .label Finish=$2ab4
+  .label StunCounter=$4d5f
+  .label HandleStun=$4e99 {
+    .label CheckFlash=$4ea3
+    .label Hide=$4eb4
+    .label Finish=$4eba
   }
-  .label ToBeStunned=$2958
-  .label Update=$29fc {
-    .label NotStunned=$2a2e
-    .label NotStunning=$2a1e
-    .label Draw=$2a34
-    .label Finish=$2a37
+  .label ToBeStunned=$4d5e
+  .label Update=$4e02 {
+    .label NotStunned=$4e34
+    .label NotStunning=$4e24
+    .label Draw=$4e3a
+    .label Finish=$4e3d
   }
-  .label DrawStun=$29c8 {
-    .label NoSound=$29e7
+  .label DrawStun=$4dce {
+    .label NoSound=$4ded
   }
-  .label IsStunned=$2957
-  .label Colour=$295b
-  .label DrawHead=$2a6f {
-    .label DrawFire=$2a89
-    .label Complete=$2a72
-    .label Finish=$2a92
+  .label IsStunned=$4d5d
+  .label Colour=$4d61
+  .label DrawHead=$4e75 {
+    .label DrawFire=$4e8f
+    .label Complete=$4e78
+    .label Finish=$4e98
   }
-  .label StunFrames=$2962
-  .label DeletePreviousCharacters=$2a38 {
+  .label StunFrames=$4d68
+  .label DeletePreviousCharacters=$4e3e {
   }
-  .label DecideWhetherToMove=$2994 {
-    .label Left=$29a9
-    .label Centre=$29a4
-    .label Finish=$29ae
+  .label DecideWhetherToMove=$4d9a {
+    .label Left=$4daf
+    .label Centre=$4daa
+    .label Finish=$4db4
   }
-  .label CharFrames=$295c
+  .label CharFrames=$4d62
   .label HitDinoSFXId=$5
   .label HideStunSFXId=$7
-  .label Reset=$2967 {
+  .label Reset=$4d6d {
   }
-  .label Stun=$297b {
+  .label Stun=$4d81 {
   }
-  .label DeathTimer=$2965
+  .label DeathTimer=$4d6b
 }
 .label Channel1_MSB=$ff12
-.label ChannelOff=$163f
+.label ChannelOff=$52ef
 .label COLOR_RAM=$1c
-.label C64=$15e9 {
-  .label DisableCIA=$1610 {
+.label C64=$52bd {
+  .label DisableCIA=$52dc {
   }
-  .label AttDec=$15f5
+  .label AttDec=$52c9
   .label VOICE_1_ATTDEC=$d405
   .label VOICE_2_FREQUENCY=$d407
   .label VOICE_3_SUSTAIN=$d414
   .label Serial_Bus_Port_A=$dd00
   .label VOLUME_FILTER=$d418
   .label VOICE_1_CONTROL=$d404
-  .label Control=$1601
+  .label Control=$52d5
   .label VOICE_2_CONTROL=$d40b
-  .label Sustain=$15fb
-  .label Pulse_Width=$15ef
+  .label Sustain=$52cf
+  .label Pulse_Width=$52c3
   .label IRQControlRegister2=$dd0d
   .label IRQControlRegister1=$dc0d
   .label VOICE_3_CONTROL=$d412
   .label VOICE_1_FREQUENCY=$d400
   .label VOICE_3_FREQUENCY=$d40e
-  .label BankOutKernalAndBasic=$1619 {
+  .label BankOutKernalAndBasic=$52dd {
   }
   .label VOICE_1_PULSE_WIDTH=$d402
   .label VOICE_2_PULSE_WIDTH=$d409
   .label VOICE_1_SUSTAIN=$d406
   .label Processor_Port=$1
-  .label PlayNote=$1607 {
+  .label PlayNote=$52db {
   }
   .label VOICE_2_SUSTAIN=$d40d
   .label VOICE_3_ATTDEC=$d413
-  .label Frequency=$15e9
+  .label Frequency=$52bd
   .label VOICE_2_ATTDEC=$d40c
   .label VOICE_3_PULSE_WIDTH=$d410
-  .label SetC64VICBank=$1622 {
+  .label SetC64VICBank=$52de {
   }
 }
 .label ONE=$1
-.label PLUS4=$1649 {
-  .label PlayNote=$1649 {
+.label PLUS4=$52f9 {
+  .label PlayNote=$52f9 {
   }
-  .label StopNote=$164a {
+  .label StopNote=$533e {
   }
 }
-.label SOUND=$1472 {
-  .label CurrentNoteID=$1479
+.label SOUND=$5172 {
+  .label CurrentNoteID=$5179
   .label VOICE_1_ATTDEC=$d405
-  .label CurrentNoteValue=$147c
-  .label MaxChannels=$1472
+  .label CurrentNoteValue=$517c
+  .label MaxChannels=$5172
   .label ObjectID=$2
-  .label Cooldown=$1482
+  .label Cooldown=$5182
   .label VOICE_2_FREQUENCY=$d407
   .label VOICE_3_SUSTAIN=$d414
-  .label Update=$1518 {
-    .label Loop=$151f
-    .label CheckNoteStatus=$1526
-    .label LastNote=$1542
+  .label Update=$521d {
+    .label Loop=$5224
+    .label CheckNoteStatus=$522b
+    .label LastNote=$5247
     .label CurrentNote=$d
-    .label EndLoop=$1559
-    .label MoreNotes=$154a
-    .label Finish=$1562 {
+    .label EndLoop=$525e
+    .label MoreNotes=$524f
+    .label Finish=$5267 {
     }
-    .label StoppingNote=$1533
+    .label StoppingNote=$5238
   }
   .label StartAddress=$e
   .label BytesToRead=$3
   .label VOICE_1_CONTROL=$d404
   .label VOICE_2_CONTROL=$d40b
-  .label NoteRemaining=$1473
-  .label SetupSID=$15a5 {
+  .label NoteRemaining=$5173
+  .label SetupSID=$52aa {
   }
   .label SID_VOLUME_FILTER=$d418
   .label VOICE_3_CONTROL=$d412
   .label VOICE_1_FREQUENCY=$d400
   .label CurrentChannel=$4
-  .label EndNoteID=$1476
+  .label EndNoteID=$5176
   .label VOICE_3_FREQUENCY=$d40e
-  .label Initialise=$14cf {
+  .label Initialise=$51cf {
   }
   .label NoteValue=$10
-  .label SongIDs=$147f
-  .label StartSong=$14d8 {
-    .label Loop=$14ed
-    .label DontOverride=$14e9
-    .label UseThisChannel=$14fd
-    .label Finish=$1512 {
+  .label SongIDs=$517f
+  .label StartSong=$51dd {
+    .label Loop=$51f2
+    .label DontOverride=$51ee
+    .label UseThisChannel=$5202
+    .label Finish=$5217 {
     }
   }
   .label VOICE_1_PULSE_WIDTH=$d402
   .label VOICE_2_PULSE_WIDTH=$d409
   .label VOICE_1_SUSTAIN=$d406
-  .label PlayNote=$156c {
+  .label PlayNote=$5271 {
   }
   .label VOICE_2_SUSTAIN=$d40d
   .label VOICE_3_ATTDEC=$d413
-  .label StopNote=$1568 {
+  .label StopNote=$526d {
   }
   .label VOICE_2_ATTDEC=$d40c
   .label ByteID=$6
-  .label GetNextNote=$1570 {
+  .label GetNextNote=$5275 {
   }
   .label VOICE_3_PULSE_WIDTH=$d410
 }
-.label Plus4Select=$164b
+.label Plus4Select=$5348
 .label ALL_ON=$ff
-.label ChannelsLSB=$1641
-.label AdjustBackgroundForVIC=$1464 {
+.label ChannelsLSB=$52f1
+.label AdjustBackgroundForVIC=$5164 {
   .label adjustedColour=$2
 }
-.label RANDOM=$15ab {
-  .label RandomAdd=$15ab
-  .label C64=$15ac {
+.label RANDOM=$52b0 {
+  .label RandomAdd=$52b0
+  .label C64=$52b1 {
   }
-  .label VIC=$15c5 {
+  .label VIC=$52b1 {
   }
-  .label Get=$15e5 {
+  .label Get=$52b6 {
   }
-  .label Initialise=$15c9 {
+  .label Initialise=$52b5 {
   }
 }
-.label LEVELDATA=$1eaf {
-  .label MaxLava=$1ece
-  .label Speed=$1ec4
-  .label DinoStunTime=$1ee1
-  .label Ones=$1eec
-  .label NextLevelID=$1eaf
-  .label ScreenPosition=$1eee
-  .label Tens=$1eed
-  .label BirdActive=$1eb0
-  .label HatchTime=$1ed8
-  .label SetupNextLevel=$1eef {
-    .label Wrap=$1f35
-    .label NoIncrease=$1f18
-    .label Finish=$1f37
+.label LEVELDATA=$429b {
+  .label MaxLava=$42ba
+  .label Speed=$42b0
+  .label DinoStunTime=$42cd
+  .label Ones=$42d8
+  .label NextLevelID=$429b
+  .label ScreenPosition=$42da
+  .label Tens=$42d9
+  .label BirdActive=$429c
+  .label HatchTime=$42c4
+  .label SetupNextLevel=$42db {
+    .label Wrap=$4321
+    .label NoIncrease=$4304
+    .label Finish=$4323
   }
   .label MaxLevels=$a
-  .label VolcanoActive=$1eba
-  .label UpdateLevelText=$1f3b {
-    .label Finish=$1f6a
+  .label VolcanoActive=$42a6
+  .label UpdateLevelText=$4327 {
+    .label Finish=$4359
   }
 }
 .label ZP_COUNTER=$1e
@@ -218,370 +218,363 @@
 .label Channel2_LSB=$ff0f
 .label ZERO=$0
 .label JOY_PORT_RIGHT=$9120
-.label INPUT=$164d {
-  .label Read264Joystick=$1678 {
+.label INPUT=$534a {
+  .label Read264Joystick=$5365 {
   }
-  .label JOY_FIRE_LAST=$1659
-  .label JOY_UP_NOW=$1661
-  .label defaultJoystickPort=$2
-  .label CalculateButtons=$167b {
-    .label DownUp=$16d7
-    .label CheckFire=$167e
-    .label CheckUp=$16b4
-    .label CheckFireUp=$1690
-    .label CheckDown=$16c8
-    .label LeftUp=$16af
-    .label Finish=$16f0
-    .label UpUp=$16c3
-    .label CheckLeft=$16a0
-    .label RightUp=$16eb
+  .label JOY_FIRE_LAST=$5356
+  .label JOY_UP_NOW=$535e
+  .label defaultJoystickPort=$1
+  .label CalculateButtons=$538d {
+    .label DownUp=$53e9
+    .label CheckFire=$5390
+    .label CheckUp=$53c6
+    .label CheckFireUp=$53a2
+    .label CheckDown=$53da
+    .label LeftUp=$53c1
+    .label Finish=$5402
+    .label UpUp=$53d5
+    .label CheckLeft=$53b2
+    .label RightUp=$53fd
   }
-  .label JOY_UP_LAST=$1657
-  .label JOY_DOWN_LAST=$1655
-  .label PortToRead=$1650
+  .label JOY_UP_LAST=$5354
+  .label JOY_DOWN_LAST=$5352
+  .label PortToRead=$534d
   .label joyLeftMask=$4
-  .label JOY_FIRE_NOW=$1663
+  .label JOY_FIRE_NOW=$5360
   .label joyRightMask=$8
-  .label JOY_LEFT_LAST=$1653
-  .label ReadC64Joystick=$1667 {
+  .label JOY_LEFT_LAST=$5350
+  .label ReadC64Joystick=$5364 {
   }
-  .label ReadVICJoystick=$1679 {
+  .label ReadVICJoystick=$538b {
   }
-  .label JOY_DOWN_NOW=$165f
-  .label JOY_LEFT_NOW=$165d
-  .label joyFireMask=$10
-  .label Initialise=$164d
+  .label JOY_DOWN_NOW=$535c
+  .label JOY_LEFT_NOW=$535a
+  .label joyFireMask=$40
+  .label Initialise=$534a
   .label joyDownMask=$2
-  .label JOY_READING=$164e
-  .label JOY_RIGHT_NOW=$165b
-  .label ReadJoystick=$16f1 {
+  .label JOY_READING=$534b
+  .label JOY_RIGHT_NOW=$5358
+  .label ReadJoystick=$5403 {
   }
-  .label FIRE_UP_THIS_FRAME=$1665
-  .label JOY_RIGHT_LAST=$1651
-  .label ReadPETKeyboard=$167a {
+  .label FIRE_UP_THIS_FRAME=$5362
+  .label JOY_RIGHT_LAST=$534e
+  .label ReadPETKeyboard=$538c {
   }
   .label joyUpMask=$1
 }
-.label VIDEO=$1400 {
-  .label CurrentBackgroundColour=$1433
-  .label Background_Colour=$d021
-  .label RasterLine=$d012
-  .label CurrentBackgroundLuminance=$1435
-  .label MultiColourHorizontal=$d016
-  .label Initialise=$143a
-  .label Border_Colour=$d020
-  .label CurrentBorderColour=$1432
-  .label Extended_Colour_2=$d023
-  .label Extended_Colour_1=$d022
-  .label VerticalControl=$d011
-  .label CurrentScreenRamAddress=$1436
-  .label CurrentExtendedColour1=$1438
-  .label CurrentBorderLuminance=$1434
-  .label CurrentExtendedColour2=$1439
+.label VIDEO=$5100 {
+  .label CurrentBackgroundColour=$5133
+  .label Background_Colour=$ff15
+  .label RasterLine=$ff1d
+  .label CurrentBackgroundLuminance=$5135
+  .label MultiColourHorizontal=$ff07
+  .label Initialise=$513a
+  .label Border_Colour=$ff19
+  .label CurrentBorderColour=$5132
+  .label Extended_Colour_2=$ff17
+  .label Extended_Colour_1=$ff16
+  .label VerticalControl=$ff06
+  .label CurrentScreenRamAddress=$5136
+  .label CurrentExtendedColour1=$5138
+  .label CurrentBorderLuminance=$5134
+  .label CurrentExtendedColour2=$5139
 }
-.label CAVEMAN=$21cf {
-  .label Draw=$21e8 {
-    .label Finish=$2206
+.label CAVEMAN=$45d0 {
+  .label Draw=$45e9 {
+    .label Finish=$4607
   }
-  .label CheckEggDelivered=$2381 {
-    .label NoDelivery=$2391
+  .label CheckEggDelivered=$4787 {
+    .label NoDelivery=$4797
   }
-  .label Cooldown=$21d9
-  .label Colour=$21d8
+  .label Cooldown=$45da
+  .label Colour=$45d9
   .label AddForBody=$15
   .label ObjectType=$6
-  .label CheckKilledByDino=$225f {
-    .label NotKilled=$226e
+  .label CheckKilledByDino=$4665 {
+    .label NotKilled=$4674
   }
-  .label Control=$226f {
-    .label CheckJoystick=$228a
-    .label HandleRight=$2294 {
+  .label Control=$4675 {
+    .label CheckJoystick=$4690
+    .label HandleRight=$469a {
       .label EggStolen=$8
-      .label NoEgg=$22c4
+      .label NoEgg=$46ca
     }
-    .label Complete=$22cc {
+    .label Complete=$46d2 {
     }
-    .label NoEggCheck=$2284
-    .label Enabled=$2277
-    .label HandleLeft=$22d0 {
-      .label MoveLeft=$22e9
+    .label NoEggCheck=$468a
+    .label Enabled=$467d
+    .label HandleLeft=$46d6 {
+      .label MoveLeft=$46ef
       .label EggsBefore=$5
-      .label Low=$230e
+      .label Low=$4714
     }
-    .label Complete2=$2316
-    .label HandleUp=$2334 {
+    .label Complete2=$471c
+    .label HandleUp=$473a {
     }
-    .label HandleDown=$2320 {
+    .label HandleDown=$4726 {
     }
-    .label HandleFire=$231a {
+    .label HandleFire=$4720 {
     }
-    .label HandleFire2=$22cd {
+    .label HandleFire2=$46d3 {
     }
-    .label ExitViaFire=$2319
+    .label ExitViaFire=$471f
   }
   .label MaxPosition=$5
   .label MoveLeftSFXId=$1
-  .label CarryingEgg=$21d7
+  .label CarryingEgg=$45d8
   .label AddForEgg=$c
   .label MoveRightSFXId=$2
-  .label DeletePriorCharacter=$221e {
-    .label DontDeleteEgg=$2245
+  .label DeletePriorCharacter=$461f {
+    .label DontDeleteEgg=$4646
   }
   .label PutEggSFXId=$4
-  .label Reset=$21da {
+  .label Reset=$45db {
   }
-  .label CheckEggPickedUp=$2348 {
-    .label NoPickup=$2361
+  .label CheckEggPickedUp=$474e {
+    .label NoPickup=$4767
   }
-  .label Frames=$21cf
-  .label Died=$2246 {
+  .label Frames=$45d0
+  .label Died=$4647 {
   }
-  .label Position=$21d5
+  .label Position=$45d6
   .label GetAxeSFXId=$d
-  .label CheckAxePickedUp=$2362 {
-    .label NoPickup=$2380
+  .label CheckAxePickedUp=$4768 {
+    .label NoPickup=$4786
   }
-  .label DisableControl=$21d6
+  .label DisableControl=$45d7
   .label StealEggSFXId=$3
   .label AddForMan=$23
-  .label DrawEgg=$2207 {
-    .label NoEgg=$221d
+  .label DrawEgg=$4608 {
+    .label NoEgg=$461e
   }
 }
-.label CAVE=$24c9 {
-  .label DeleteEggs=$24e3 {
-    .label Loop=$24e7
+.label CAVE=$48cf {
+  .label DeleteEggs=$48e9 {
+    .label Loop=$48ed
     .label EggID=$9
-    .label Finish=$24fc
+    .label Finish=$4902
   }
-  .label EggStolen=$2548 {
+  .label EggStolen=$494e {
   }
-  .label DrawStoolEgg=$254f {
+  .label DrawStoolEgg=$4955 {
   }
   .label StoolEggPosition=$c
-  .label Colour=$24d3
-  .label EggOnStool=$24ca
-  .label RemoveStoolEgg=$24fd {
+  .label Colour=$48d9
+  .label EggOnStool=$48d0
+  .label RemoveStoolEgg=$4903 {
   }
   .label MaxEggs=$8
-  .label LevelCompleted=$2531 {
+  .label LevelCompleted=$4937 {
   }
-  .label EggsInCave=$24c9
-  .label CharFrames=$24cb
-  .label Reset=$24d4 {
+  .label EggsInCave=$48cf
+  .label CharFrames=$48d1
+  .label Reset=$48da {
   }
-  .label IRQCode=$2530 {
+  .label IRQCode=$4936 {
   }
-  .label DrawCaveEggs=$253a {
+  .label DrawCaveEggs=$4940 {
   }
-  .label AddEgg=$2506 {
-    .label LevelComplete=$251e
-    .label PutEggOnStool=$2522
-    .label Finish=$252a
+  .label AddEgg=$490c {
+    .label LevelComplete=$4924
+    .label PutEggOnStool=$4928
+    .label Finish=$4930
   }
 }
-.label MAPLOADER=$171d {
-  .label Column=$1721
-  .label DrawMap=$1727 {
-    .label Screen=$178a
-    .label TileColumnLoop=$1757
-    .label TileLookup=$1784
-    .label NextRow=$17e6
-    .label TileRowLoop=$1752
-    .label Tile=$1761
-    .label NextColumn=$17ad
-    .label Colour=$1794
+.label MAPLOADER=$3b00 {
+  .label Column=$3b04
+  .label DrawMap=$3b0a {
   }
-  .label Columns=$1723
-  .label Initialise=$1726 {
+  .label Columns=$3b06
+  .label Initialise=$3b09 {
   }
-  .label Row=$1722
-  .label TileSize=$1725
-  .label TileScreenLocations=$171d
-  .label Rows=$1724
+  .label Row=$3b05
+  .label TileSize=$3b08
+  .label TileScreenLocations=$3b00
+  .label Rows=$3b07
 }
 .label MAIN=$1f {
-  .label GameCounter=$869
-  .label PerformFrameCodeFlag=$868
-  .label ColourLastRow=$95a {
+  .label GameCounter=$1069
+  .label PerformFrameCodeFlag=$1068
+  .label ColourLastRow=$1174 {
   }
-  .label GameOverTimer=$871
-  .label InitialCooldown=$870
-  .label CavemanIRQ=$a0f {
-    .label NotYet=$a24
-    .label NotWaiting=$a19
-    .label Paused=$a21
+  .label GameOverTimer=$1071
+  .label InitialCooldown=$1070
+  .label CavemanIRQ=$121d {
+    .label NotYet=$1232
+    .label NotWaiting=$1227
+    .label Paused=$122f
   }
-  .label Pro=$97e
-  .label GotoNextLevel=$a7d {
+  .label Pro=$1198
+  .label GotoNextLevel=$128b {
   }
-  .label LoadGame=$abe {
+  .label LoadGame=$12d1 {
   }
-  .label SetGameOver=$ad4 {
+  .label SetGameOver=$12e7 {
   }
-  .label TitleScreen=$877 {
+  .label TitleScreen=$107a {
   }
-  .label MainIRQ=$9f9 {
-    .label NotYet=$a0e
+  .label MainIRQ=$1207 {
+    .label NotYet=$121c
   }
-  .label Entry=$823
-  .label NextLife=$a53 {
-    .label NotDead=$a65
-    .label Finish=$a68
+  .label PetLoop=$1077
+  .label Entry=$1023
+  .label NextLife=$1261 {
+    .label NotDead=$1273
+    .label Finish=$1276
   }
-  .label GameOverUpdate=$b02 {
-    .label Waiting=$b11
+  .label GameOverUpdate=$1315 {
+    .label Waiting=$1324
   }
-  .label Random=$a9a {
+  .label Random=$12a8 {
   }
-  .label WaitingForFire=$876
-  .label NextLevel=$a69 {
+  .label WaitingForFire=$1076
+  .label NextLevel=$1277 {
   }
-  .label Reset=$a9b {
+  .label Reset=$12a9 {
   }
-  .label TitleLoop=$8f1 {
+  .label TitleLoop=$1106 {
   }
-  .label Amateur=$986
-  .label GameOver=$873
-  .label CheckWhetherToUpdateScore=$ad0 {
-    .label NoScoreAdd=$ad3
+  .label Amateur=$11a0
+  .label GameOver=$1073
+  .label CheckWhetherToUpdateScore=$12e3 {
+    .label NoScoreAdd=$12e6
   }
-  .label CheckNextLevel=$a8c {
-    .label Finish=$a99
+  .label CheckNextLevel=$129a {
+    .label Finish=$12a7
   }
-  .label SetupCharMemoryTitle=$9e9 {
+  .label SetupCharMemoryTitle=$11fc {
   }
-  .label GameTick=$b41 {
-    .label NotRunning=$b58
-    .label Finish=$b61
+  .label GameTick=$1354 {
+    .label NotRunning=$136b
+    .label Finish=$1374
   }
-  .label GameIsActive=$86f
-  .label Instructions=$90f {
+  .label GameIsActive=$106f
+  .label Instructions=$1124 {
   }
-  .label GameTickFlag=$86c
-  .label SetupScreenMemory=$9b9 {
+  .label GameTickFlag=$106c
+  .label SetupScreenMemory=$11e0 {
   }
-  .label GameMode=$86d
-  .label BackgroundColour=$86e
-  .label FrameCode=$b17 {
-    .label GamePaused=$b24
-    .label Finish=$b40
+  .label GameMode=$106d
+  .label BackgroundColour=$106e
+  .label FrameCode=$132a {
+    .label GamePaused=$1337
+    .label Finish=$1353
   }
-  .label SetupCharMemory=$9d9 {
+  .label SetupCharMemory=$11f1 {
   }
-  .label SetupGameColours=$98e {
+  .label SetupGameColours=$11a8 {
   }
-  .label NewGame=$a25 {
+  .label NewGame=$1233 {
   }
-  .label TempLoop=$acd {
+  .label TempLoop=$12e0 {
   }
-  .label LevelCompleteTimer=$874
+  .label LevelCompleteTimer=$1074
 }
 .label JOY_RIGHT=$8
 .label VECTOR2=$10
-.label ChannelsMSB=$1645
+.label ChannelsMSB=$52f5
 .label VECTOR1=$e
-.label BIRD=$2558 {
-  .label IsActive=$2598
-  .label Update=$25bd {
-    .label NotReadyToSwoop=$263c {
+.label BIRD=$495e {
+  .label IsActive=$499e
+  .label Update=$49c3 {
+    .label NotReadyToSwoop=$4a42 {
     }
-    .label FlyOutOfScreen=$261f {
-      .label Finish=$2633
+    .label FlyOutOfScreen=$4a25 {
+      .label Finish=$4a39
     }
-    .label Draw=$266c
-    .label NotJustKilled=$25f4
-    .label SwoopDecision=$2619 {
+    .label Draw=$4a72
+    .label NotJustKilled=$49fa
+    .label SwoopDecision=$4a1f {
     }
-    .label NotWaitingToSpawn=$25d4
-    .label Spawn=$2654
-    .label Finish=$2672
-    .label Finish2=$2616
+    .label NotWaitingToSpawn=$49da
+    .label Spawn=$4a5a
+    .label Finish=$4a78
+    .label Finish2=$4a1c
   }
-  .label PreviousPosition=$25a1
+  .label PreviousPosition=$49a7
   .label StarCharacter=$e0
-  .label KillBird=$267c {
+  .label KillBird=$4a82 {
   }
-  .label DeletePriorCharacter=$2688 {
-    .label DontDelete=$2694
+  .label DeletePriorCharacter=$4a8e {
+    .label DontDelete=$4a9a
   }
-  .label JustKilled=$259d
+  .label JustKilled=$49a3
   .label StartPoint=$4
-  .label Reset=$25a2 {
+  .label Reset=$49a8 {
   }
-  .label Patterns=$2558
+  .label Patterns=$495e
   .label SequenceLength=$8
-  .label CheckWhetherToSwoopOrMiss=$269f {
-    .label DontGoForEgg=$26b6
+  .label CheckWhetherToSwoopOrMiss=$4aa5 {
+    .label DontGoForEgg=$4abc
   }
-  .label Pattern=$259c
+  .label Pattern=$49a2
   .label MissPoint=$2
-  .label CheckWhetherToTakeEgg=$269e {
+  .label CheckWhetherToTakeEgg=$4aa4 {
   }
-  .label Position=$2599
-  .label ReadyToSpawn=$259b
+  .label Position=$499f
+  .label ReadyToSpawn=$49a1
   .label NumberOfPatterns=$6
   .label SwoopPoint=$3
-  .label Despawn=$2695 {
+  .label Despawn=$4a9b {
   }
-  .label ReplaceCharacter=$25a0
-  .label DrawBird=$2673 {
+  .label ReplaceCharacter=$49a6
+  .label DrawBird=$4a79 {
   }
   .label SwoopDecisionPoint=$8
-  .label SpawnTimer=$259e
+  .label SpawnTimer=$49a4
   .label KillBirdSFXId=$8
-  .label SequenceID=$259a
+  .label SequenceID=$49a0
 }
-.label VOLCANO=$2ab5 {
+.label VOLCANO=$4ebb {
   .label LavaCrackChar=$2d
   .label MaxPosition=$3
-  .label Position=$2ab6
-  .label Start=$2aba {
+  .label Position=$4ebc
+  .label Start=$4ec0 {
   }
-  .label Stop=$2ac3 {
+  .label Stop=$4ec9 {
   }
-  .label IsActive=$2ab5
-  .label CharFrames=$2ab7
-  .label Update=$2ace {
-    .label Draw=$2af1
-    .label ResetPosition=$2aec
-    .label Finish=$2afd
+  .label IsActive=$4ebb
+  .label CharFrames=$4ebd
+  .label Update=$4ed4 {
+    .label Draw=$4ef7
+    .label ResetPosition=$4ef2
+    .label Finish=$4f03
   }
 }
-.label ChannelOn=$163d
+.label ChannelOn=$52ed
 .label JOY_PORT_UDLF=$9111
 .label TEMP12=$d
 .label TEMP11=$c
 .label TEMP10=$b
 .label SCREEN_RAM=$1a
-.label LIVES=$2169 {
+.label LIVES=$4567 {
   .label GameOverSFXId=$c
   .label DeadSFXId=$b
-  .label Draw=$2195 {
-    .label Loop=$219d
+  .label Draw=$4593 {
+    .label Loop=$459b
     .label LivesLeft=$2
-    .label DrawHeart=$21a4
-    .label DrawBlank=$21b8
-    .label EndLoop=$21c3
+    .label DrawHeart=$45a2
+    .label DrawBlank=$45b9
+    .label EndLoop=$45c4
   }
-  .label GainLife=$2178 {
+  .label GainLife=$4576 {
   }
-  .label Value=$2169
-  .label BlankCharacter=$216d
-  .label Reset=$216e {
+  .label Value=$4567
+  .label BlankCharacter=$456b
+  .label Reset=$456c {
   }
-  .label LoseLife=$217f {
-    .label Finish=$2191
-    .label NoLifeSound=$218c
+  .label LoseLife=$457d {
+    .label Finish=$458f
+    .label NoLifeSound=$458a
   }
-  .label HeartCharacter=$216c
-  .label StartCharacterPosition=$216b
+  .label HeartCharacter=$456a
+  .label StartCharacterPosition=$4569
 }
-.label AdjustBorderForVIC=$1458 {
+.label AdjustBorderForVIC=$5158 {
   .label adjustedColour=$2
 }
 .label VECTOR4=$14
-.label AddLuminance=$144b {
+.label AddLuminance=$514b {
   .label ShiftedLuminance=$2
   .label ColourValue=$3
 }
@@ -590,343 +583,348 @@
 .label VECTOR6=$18
 .label VECTOR5=$16
 .label JOY_FIRE=$10
-.label INS_LOADER=$1903 {
-  .label Column=$1907
-  .label DrawMap=$190d {
-    .label Screen=$1970
-    .label TileColumnLoop=$193d
-    .label TileLookup=$196a
-    .label NextRow=$19cc
-    .label TileRowLoop=$1938
-    .label Tile=$1947
-    .label NextColumn=$1993
-    .label Colour=$197a
+.label INS_LOADER=$3cec {
+  .label Column=$3cf0
+  .label DrawMap=$3cf6 {
+    .label Screen=$3d59
+    .label TileColumnLoop=$3d26
+    .label TileLookup=$3d53
+    .label NextRow=$3db8
+    .label TileRowLoop=$3d21
+    .label Tile=$3d30
+    .label NextColumn=$3d7f
+    .label Colour=$3d66
   }
-  .label Columns=$1909
-  .label Initialise=$190c {
+  .label Columns=$3cf2
+  .label Initialise=$3cf5 {
   }
-  .label Row=$1908
-  .label TileSize=$190b
-  .label TileScreenLocations=$1903
-  .label Rows=$190a
+  .label Row=$3cf1
+  .label TileSize=$3cf4
+  .label TileScreenLocations=$3cec
+  .label Rows=$3cf3
 }
-.label SCORE=$2006 {
-  .label Add=$207f {
-    .label BetterOrEqualHigh=$20a4
-    .label SetNewBest=$20c1
-    .label CheckMiddle=$20a9
-    .label BetterOrEqualMiddle=$20b4
-    .label CheckLow=$20b9
-    .label NoNewBest=$20d6
+.label SCORE=$43fe {
+  .label Add=$4477 {
+    .label BetterOrEqualHigh=$449c
+    .label SetNewBest=$44b9
+    .label CheckMiddle=$44a1
+    .label BetterOrEqualMiddle=$44ac
+    .label CheckLow=$44b1
+    .label NoNewBest=$44ce
   }
-  .label GotEgg=$2055 {
+  .label GotEgg=$444d {
   }
-  .label Draw=$20da {
+  .label Draw=$44d2 {
     .label YReg=$6
-    .label ScoreLoop=$20de
+    .label ScoreLoop=$44d6
     .label XReg=$7
-    .label PlotDigit=$20f5 {
-      .label NotYet=$2108
+    .label PlotDigit=$44ed {
+      .label NotYet=$4500
     }
   }
-  .label GotEggScore=$2008
-  .label ScoreToAdd=$2010
-  .label HitBirdScore=$2006
-  .label HitDinoScore=$2007
-  .label CharacterSetStart=$2011
-  .label ExtraLifeAwarded=$2016
-  .label AddToScore=$2030 {
+  .label GotEggScore=$4400
+  .label ScoreToAdd=$4408
+  .label HitBirdScore=$43fe
+  .label HitDinoScore=$43ff
+  .label CharacterSetStart=$4409
+  .label ExtraLifeAwarded=$440e
+  .label AddToScore=$4428 {
   }
-  .label Best=$200d
-  .label Reset=$2017 {
+  .label Best=$4405
+  .label Reset=$440f {
   }
-  .label DrawBest=$2123 {
+  .label DrawBest=$451e {
     .label YReg=$6
-    .label ScoreLoop=$2127
+    .label ScoreLoop=$4522
     .label XReg=$7
-    .label PlotDigit=$213e {
-      .label NotYet=$214e
+    .label PlotDigit=$4539 {
+      .label NotYet=$4549
     }
   }
-  .label CheckScoreToAdd=$205e {
-    .label Finish=$206e
+  .label CheckScoreToAdd=$4456 {
+    .label Finish=$4466
   }
-  .label LevelComplete=$203a {
+  .label LevelComplete=$4432 {
   }
-  .label HitBird=$2043 {
+  .label HitBird=$443b {
   }
   .label Amount=$2
-  .label HitDino=$204c {
+  .label HitDino=$4444 {
   }
-  .label ExtraLifeMSB=$2015
-  .label ScreenPosition=$2012
-  .label CheckExtraLife=$206f {
-    .label Finish=$207d
+  .label ExtraLifeMSB=$440d
+  .label ScreenPosition=$440a
+  .label CheckExtraLife=$4467 {
+    .label Finish=$4475
   }
-  .label LevelCompleteScore=$2009
-  .label ExtraLifeLSB=$2014
+  .label LevelCompleteScore=$4401
+  .label ExtraLifeLSB=$440c
   .label ScorePerFrame=$5
-  .label Value=$200a
-  .label BestPosition=$2013
+  .label Value=$4402
+  .label BestPosition=$440b
 }
-.label LAVA=$2821 {
-  .label MaxPositionForColumn=$2834
-  .label Frames=$2840
-  .label Position=$2824
-  .label SpawnLava=$28e7 {
-    .label DontSubtract=$28fa
-    .label Finish=$290e
+.label LAVA=$4c27 {
+  .label MaxPositionForColumn=$4c3a
+  .label Frames=$4c46
+  .label Position=$4c2a
+  .label SpawnLava=$4ced {
+    .label DontSubtract=$4d00
+    .label Finish=$4d14
   }
-  .label DrawLava=$2940 {
-    .label Finish=$2953
+  .label DrawLava=$4d46 {
+    .label Finish=$4d59
     .label StoreX=$c
   }
-  .label PositionsThatKill=$2839
-  .label EnableFlag=$282d
-  .label MoveLava=$28b8 {
+  .label PositionsThatKill=$4c3f
+  .label EnableFlag=$4c33
+  .label MoveLava=$4cbe {
     .label StoreY=$a
     .label ThisColumn=$9
     .label ThisPosition=$8
-    .label StillFalling=$28df
-    .label Finish=$28df
+    .label StillFalling=$4ce5
+    .label Finish=$4ce5
     .label MaxPositionThisColumn=$7
     .label StoreX=$b
   }
-  .label Update=$290f {
-    .label Loop=$2916
-    .label CheckSpawn=$292b
-    .label NotFalling=$2921
-    .label EndLoop=$292e
-    .label Finish=$293a
+  .label Update=$4d15 {
+    .label Loop=$4d1c
+    .label CheckSpawn=$4d31
+    .label NotFalling=$4d27
+    .label EndLoop=$4d34
+    .label Finish=$4d40
   }
-  .label ColumnAlreadyUsed=$283e
+  .label ColumnAlreadyUsed=$4c44
   .label Colour=$2
-  .label DeleteLava=$28ab {
+  .label DeleteLava=$4cb1 {
   }
-  .label FirstPositionForColumn=$282f
-  .label Column=$2827
-  .label Falling=$2821
-  .label DisableFlag=$282e
-  .label MaxInstance=$283f
-  .label CheckHitCaveman=$2877 {
-    .label Loop=$2879
-    .label EndLoop=$28a1
+  .label FirstPositionForColumn=$4c35
+  .label Column=$4c2d
+  .label Falling=$4c27
+  .label DisableFlag=$4c34
+  .label MaxInstance=$4c45
+  .label CheckHitCaveman=$4c7d {
+    .label Loop=$4c7f
+    .label EndLoop=$4ca7
     .label ThisPosition=$7
-    .label Finish=$28aa
+    .label Finish=$4cb0
     .label StoreX=$6
   }
-  .label Reset=$285d {
-    .label Loop=$285f
+  .label Reset=$4c63 {
+    .label Loop=$4c65
     .label StoreX=$9
   }
-  .label EnableFlags=$282a
+  .label EnableFlags=$4c30
 }
 .label Memory_Setup_Register=$d018
-.label SOUND_DATA=$1e21 {
-  .label StealEgg=$1e69
-  .label HideStun=$1e75
-  .label GameOver=$1e93
-  .label MoveLeft=$1e65
-  .label SongLength=$1e3d
-  .label HitDino=$1e6f
-  .label LifeLost=$1e85
-  .label MoveRight=$1e67
-  .label ShowStun=$1e73
-  .label Baby2=$1e81
-  .label KillBird=$1e77
-  .label Baby1=$1e7d
-  .label GetAxe=$1eab
-  .label DataStart=$1e21
-  .label PutEgg=$1e6d
-  .label StartTune=$1e4b
+.label SOUND_DATA=$420d {
+  .label StealEgg=$4255
+  .label HideStun=$4261
+  .label GameOver=$427f
+  .label MoveLeft=$4251
+  .label SongLength=$4229
+  .label HitDino=$425b
+  .label LifeLost=$4271
+  .label MoveRight=$4253
+  .label ShowStun=$425f
+  .label Baby2=$426d
+  .label KillBird=$4263
+  .label Baby1=$4269
+  .label GetAxe=$4297
+  .label DataStart=$420d
+  .label PutEgg=$4259
+  .label StartTune=$4237
 }
-.label TITLE_LOADER=$1810 {
-  .label Column=$1814
-  .label DrawMap=$181a {
-    .label Screen=$187d
-    .label TileColumnLoop=$184a
-    .label TileLookup=$1877
-    .label NextRow=$18d9
-    .label TileRowLoop=$1845
-    .label Tile=$1854
-    .label NextColumn=$18a0
-    .label Colour=$1887
+.label TITLE_LOADER=$3bf6 {
+  .label Column=$3bfa
+  .label DrawMap=$3c00 {
+    .label Screen=$3c63
+    .label TileColumnLoop=$3c30
+    .label TileLookup=$3c5d
+    .label NextRow=$3cc2
+    .label TileRowLoop=$3c2b
+    .label Tile=$3c3a
+    .label NextColumn=$3c89
+    .label Colour=$3c70
   }
-  .label Columns=$1816
-  .label Initialise=$1819 {
+  .label Columns=$3bfc
+  .label Initialise=$3bff {
   }
-  .label Row=$1815
-  .label TileSize=$1818
-  .label TileScreenLocations=$1810
-  .label Rows=$1817
+  .label Row=$3bfb
+  .label TileSize=$3bfe
+  .label TileScreenLocations=$3bf6
+  .label Rows=$3bfd
 }
 .label JOY_UP=$1
 .label JOY_LEFT=$4
-.label CHAR_DRAWING=$1f6b {
-  .label ClearAll=$1f8f {
-    .label Loop=$1f91
-    .label Finish=$1fa5
+.label CHAR_DRAWING=$435a {
+  .label BUFFER_ADDRESS=$14
+  .label ClearAll=$437e {
+    .label Loop=$4380
+    .label Finish=$4394
   }
   .label TotalObjects=$6d
   .label ObjectID=$2
-  .label GetColour=$1fa6 {
+  .label GetColour=$4395 {
   }
   .label StartAddress=$e
-  .label ColourObject=$1fae {
-    .label Hide=$1fb9
-    .label Loop=$1fd2
+  .label ColourObject=$43a0 {
+    .label Hide=$43ae
+    .label Loop=$43c7
     .label ColourRequest=$5
-    .label Finish=$2001
+    .label Finish=$43f9
+    .label ColourObject=$43b1
   }
-  .label Colour=$1f6c
+  .label Colour=$435b
   .label BytesToRead=$3
   .label COLOR_ADDRESS=$18
-  .label CalculateAddresses=$1f6d {
+  .label CalculateAddresses=$435c {
     .label RowOffset=$8
   }
   .label Column=$5
   .label SCREEN_ADDRESS=$16
   .label Row=$4
   .label ByteID=$6
-  .label LoopID=$1f6b
+  .label BlankCharacter=$20
+  .label LoopID=$435a
 }
-.label EGG=$2392 {
-  .label ShowBaby1=$23b5 {
+.label SCREEN_DATA=$43fe {
+}
+.label EGG=$4798 {
+  .label ShowBaby1=$47bb {
   }
-  .label StealEgg=$24a1 {
+  .label StealEgg=$48a7 {
   }
   .label LayingPosition=$2
-  .label ShowBaby2=$23c9 {
+  .label ShowBaby2=$47cf {
   }
   .label Baby2SFXId=$a
-  .label HatchEgg=$24bf {
+  .label HatchEgg=$48c5 {
   }
-  .label Position=$2396
-  .label Lay=$23ec {
+  .label Position=$479c
+  .label Lay=$47f2 {
   }
-  .label EggStolen=$2398
-  .label DanceCounter=$239c
-  .label DeleteEgg=$2400 {
-    .label Finish=$240b
+  .label EggStolen=$479e
+  .label DanceCounter=$47a2
+  .label DeleteEgg=$4806 {
+    .label Finish=$4811
   }
-  .label Update=$240c {
-    .label RollTowardsPlayer=$245f
-    .label NotDancing=$243d
-    .label Baby2=$2424
-    .label RollTowardsVolcano=$246a
-    .label StartCounter=$2484
-    .label NowLayEgg=$244a
-    .label EggHatching=$247a
-    .label EggWaiting=$248d
-    .label StartRollingBack=$2498
-    .label CheckIfDone=$242c
-    .label Finish=$249d
-    .label NotLaying=$2450
+  .label Update=$4812 {
+    .label RollTowardsPlayer=$4865
+    .label NotDancing=$4843
+    .label Baby2=$482a
+    .label RollTowardsVolcano=$4870
+    .label StartCounter=$488a
+    .label NowLayEgg=$4850
+    .label EggHatching=$4880
+    .label EggWaiting=$4893
+    .label StartRollingBack=$489e
+    .label CheckIfDone=$4832
+    .label Finish=$48a3
+    .label NotLaying=$4856
   }
-  .label ObjectIDs=$2392
+  .label ObjectIDs=$4798
   .label RelayingPosition=$4
-  .label BabyShowing=$239e
+  .label BabyShowing=$47a4
   .label LayEggDelay=$3
   .label Baby1SFXId=$9
-  .label LayingEgg=$2399
-  .label HatchCounter=$239a
-  .label Reset=$239f {
+  .label LayingEgg=$479f
+  .label HatchCounter=$47a0
+  .label Reset=$47a5 {
   }
-  .label DrawSprite=$24be {
+  .label DrawSprite=$48c4 {
   }
-  .label EggHatched=$2397
-  .label HideBabies=$23dd {
+  .label EggHatched=$479d
+  .label HideBabies=$47e3 {
   }
-  .label DrawEgg=$24ad {
-    .label DrawCharacter=$24b2
-    .label DontDraw=$24bd
+  .label DrawEgg=$48b3 {
+    .label DrawCharacter=$48b8
+    .label DontDraw=$48c3
   }
 }
 .label TED_CONTROL=$ff11
 .label Channel1_LSB=$ff0e
-.label AXE=$26bc {
-  .label Frames=$26dc
-  .label CurrentFrame=$26ee
-  .label Draw=$2703 {
-    .label PutInHand=$2738
-    .label DrawAxe=$274b
-    .label GetThrowData=$271e
-    .label Finish=$2757
-    .label TurnOffSprite=$2735
+.label AXE=$4ac2 {
+  .label Frames=$4ae2
+  .label CurrentFrame=$4af4
+  .label Draw=$4b09 {
+    .label PutInHand=$4b3e
+    .label DrawAxe=$4b51
+    .label GetThrowData=$4b24
+    .label Finish=$4b5d
+    .label TurnOffSprite=$4b3b
   }
-  .label CheckWhetherHitBird=$2765 {
-    .label Finish=$2773
+  .label CheckWhetherHitBird=$4b6b {
+    .label Finish=$4b79
   }
-  .label BeingFired=$26bd
-  .label FramesPerColumn=$26c6
-  .label MoveAxe=$27ec {
-    .label DontRemove=$2806
-    .label Finish=$280c
+  .label BeingFired=$4ac3
+  .label FramesPerColumn=$4acc
+  .label MoveAxe=$4bf2 {
+    .label DontRemove=$4c0c
+    .label Finish=$4c12
   }
-  .label KillBirdPositions=$26cc
-  .label FrameID=$26ec
-  .label ThrowAxe=$279b {
-    .label Finish=$27cf
+  .label KillBirdPositions=$4ad2
+  .label FrameID=$4af2
+  .label ThrowAxe=$4ba1 {
+    .label Finish=$4bd5
   }
-  .label Colour=$26cb
-  .label IsCarrying=$26bc
-  .label CheckWhetherHitDino=$2774 {
-    .label Finish=$279a
+  .label Colour=$4ad1
+  .label IsCarrying=$4ac2
+  .label CheckWhetherHitDino=$4b7a {
+    .label Finish=$4ba0
   }
-  .label FrameCode=$27d0 {
-    .label CheckWhetherCarrying=$27e0
-    .label Finish=$27e8
+  .label FrameCode=$4bd6 {
+    .label CheckWhetherCarrying=$4be6
+    .label Finish=$4bee
   }
-  .label SpawnAxe=$2816 {
-    .label NoAutoCarry=$2820
+  .label SpawnAxe=$4c1c {
+    .label NoAutoCarry=$4c26
   }
-  .label StartFrameID=$26ed
-  .label Column=$26ca
-  .label DeletePriorCharacter=$2758 {
-    .label DontDelete=$2764
+  .label StartFrameID=$4af3
+  .label Column=$4ad0
+  .label DeletePriorCharacter=$4b5e {
+    .label DontDelete=$4b6a
   }
-  .label AxeMoveCounter=$26be
-  .label HandFrames=$26c0
-  .label Reset=$26ef {
+  .label AxeMoveCounter=$4ac4
+  .label HandFrames=$4ac6
+  .label Reset=$4af5 {
   }
-  .label DespawnAxe=$280d {
+  .label DespawnAxe=$4c13 {
   }
 }
-.label VIC20=$162f {
+.label VIC20=$52df {
   .label Memory_Setup_Register=$9005
-  .label ConvertTitleSet=$163c {
+  .label ConvertTitleSet=$52ec {
   }
-  .label Channel=$1638
-  .label ConvertCharacterSet=$163b {
+  .label Channel=$52e8
+  .label ConvertCharacterSet=$52eb {
   }
   .label Channel3=$900c
-  .label Channels=$1632
+  .label Channels=$52e2
   .label Channel4=$900d
   .label Channel1=$900a
   .label Channel2=$900b
-  .label PlayNote=$1639 {
+  .label PlayNote=$52e9 {
   }
-  .label StopNote=$163a {
+  .label StopNote=$52ea {
   }
-  .label Countdown=$162f
+  .label Countdown=$52df
 }
-.label STARS=$2afe {
-  .label TimeLeft=$2b08
+.label STARS=$4f04 {
+  .label TimeLeft=$4f0e
   .label COLOR_ADDRESS=$18
   .label StarCharacter=$ef
-  .label CalculateAddresses=$2b2c {
+  .label CalculateAddresses=$4f32 {
   }
-  .label Column=$2afe
-  .label StarChars=$2b0c
+  .label Column=$4f04
+  .label StarChars=$4f12
   .label SCREEN_ADDRESS=$16
-  .label Columns=$2b04
-  .label Row=$2aff
-  .label Update=$2b46 {
-    .label Loop=$2b48
-    .label NewStar=$2b58
-    .label NoDelete=$2b6f
-    .label EndLoop=$2ba0
-    .label Finish=$2ba5
+  .label Columns=$4f0a
+  .label Row=$4f05
+  .label Update=$4f4c {
+    .label Loop=$4f4e
+    .label NewStar=$4f5e
+    .label NoDelete=$4f75
+    .label EndLoop=$4fa6
+    .label Finish=$4fab
   }
-  .label Rows=$2b00
+  .label Rows=$4f06
 }

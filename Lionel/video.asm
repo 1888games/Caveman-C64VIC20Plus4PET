@@ -214,20 +214,23 @@ VIDEO: {
 		sbc #3
 		sta SCREEN_RAM + 1
 
-		lda #0
+		.if(target != "PET") {
 
-		sta (COLOR_RAM), y
-		inc COLOR_RAM + 1
-		sta (COLOR_RAM), y
-		inc COLOR_RAM + 1
-		sta (COLOR_RAM), y
-		inc COLOR_RAM + 1
-		sta (COLOR_RAM), y
+			lda #0
 
-		lda COLOR_RAM + 1
-		sec
-		sbc #3
-		sta COLOR_RAM + 1
+			sta (COLOR_RAM), y
+			inc COLOR_RAM + 1
+			sta (COLOR_RAM), y
+			inc COLOR_RAM + 1
+			sta (COLOR_RAM), y
+			inc COLOR_RAM + 1
+			sta (COLOR_RAM), y
+
+			lda COLOR_RAM + 1
+			sec
+			sbc #3
+			sta COLOR_RAM + 1
+		}
 
 
 		cpy #255

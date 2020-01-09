@@ -8,12 +8,13 @@ Memory Map
 ----------
 Default-segment:
   *$0002-$001e Temp vars zero page
-  $0800-$0822 BASIC Stub
-  $0823-$0b61 Entry
-  $1400-$2ba5 Lionel
-  $8500-$8f4c Screen data
-  $f000-$f7ff Charset
-  $f800-$ff27 Title Charset
+  $1000-$1022 BASIC Stub
+  $1023-$1374 Entry
+  $2000-$2727 Title Charset
+  $2800-$2fff Charset
+  $3000-$39d4 Screen data
+  $3b00-$4fab Code
+  $5100-$542e Lionel
 
 Writing Vice symbol file: C:\Users\Nick\Dropbox\C64\CavemanLionel\scripts\bin\main.vs
 Writing Symbol file: main.sym

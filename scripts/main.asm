@@ -3,7 +3,7 @@
 // 264 - C16, C116, Plus4
 // VIC - VIC 20
 
-.var target = "C64"
+.var target = "PET"
 #import "../Lionel/zeroPage.asm"
 
 MAIN: {
@@ -27,7 +27,12 @@ BASICStub(Entry,"Caveman")
 
 Entry:		
 	
+
+
 	jsr LIONEL.Initialise	
+
+	
+
  	jsr C64.BankOutKernalAndBasic
 	jsr C64.DisableCIA
 	jsr VIC20.ConvertCharacterSet
@@ -48,6 +53,9 @@ Entry:
 
 	//jmp LoadGame
 	jmp TitleScreen
+
+	//jmp  LoadGame
+	
 
 
 .if(target == "VIC") {
@@ -71,6 +79,12 @@ WaitingForFire: 		.byte 1
 
 
 
+PetLoop:
+
+	jmp PetLoop
+
+
+
 TitleScreen: {
 
 
@@ -88,6 +102,8 @@ TitleScreen: {
 	jsr SetupCharMemoryTitle	
 
 	ClearScreen()
+
+	//jmp PetLoop
 
 	jsr TITLE_LOADER.DrawMap
 
@@ -246,6 +262,7 @@ InstructionsLoop:
 
 		lda #ONE
 		sta GameMode
+	
 		jmp LoadGame
 
 	Amateur:
@@ -374,9 +391,15 @@ CavemanIRQ:{
 
 NewGame: {	
 
+	//jmp PetLoop
+
+	//ldx #4
+	////jsr CHAR_DRAWING.ColourObject
 
  	jsr CHAR_DRAWING.ClearAll
 
+
+ 	//jmp PetLoop
 
 	lda #ONE
 	sta LEVELDATA.Ones
@@ -512,7 +535,7 @@ LoadGame: {
 
 	jsr NewGame
 
-	//jmp TempLoop
+	
 	jmp Loop
 
 }
@@ -561,7 +584,7 @@ SetGameOver:{
 
 
 Loop:
-		
+
 	.if (target == "VIC") {
 		WaitForRasterLine(40)
 	}

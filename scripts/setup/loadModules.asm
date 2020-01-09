@@ -18,7 +18,7 @@
 #import "lookups/soundData.asm"
 #import "lookups/levelData.asm"
 #import "interrupts/charDrawing.asm"
-
+#import "lookups/petData.asm"
 
 
 // #import "setup/sound.asm"

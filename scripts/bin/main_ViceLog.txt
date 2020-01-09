@@ -1,7 +1,7 @@
  
 *** VICE Version 3.3, rev 37130M ***
  
-Welcome to c64, the free portable C64 Emulator.
+Welcome to 264, the free portable PLUS4 Emulator.
  
 Current VICE team members:
 Marco van den Heuvel, Fabrizio Gennari, Groepaz, Errol Smith, Olaf Seibert, 
@@ -11,9 +11,10 @@ David Hogan.
 This is free software with ABSOLUTELY NO WARRANTY.
 See the "About VICE" command for more info.
  
-Loading system file `C:\C64\Tools\Vice\C64\kernal'.
-Loading system file `C:\C64\Tools\Vice\C64\basic'.
-Loading system file `C:\C64\Tools\Vice\C64\chargen'.
+Loading system file `C:\C64\Tools\Vice\PLUS4\kernal'.
+Loading system file `C:\C64\Tools\Vice\PLUS4\basic'.
+Loading system file `C:\C64\Tools\Vice\PLUS4\3plus1lo'.
+Loading system file `C:\C64\Tools\Vice\PLUS4\3plus1hi'.
 Loading system file `C:\C64\Tools\Vice\PRINTER\mps803'.
 Palette: Loading palette `C:\C64\Tools\Vice\PRINTER\mps803.vpl'.
 Loading system file `C:\C64\Tools\Vice\PRINTER\nl10-cbm'.
@@ -28,38 +29,38 @@ Loading system file `C:\C64\Tools\Vice\DRIVES\dos1571'.
 Loading system file `C:\C64\Tools\Vice\DRIVES\dos1581'.
 DriveROM: Error - 2000 ROM image not found. Hardware-level 2000 emulation is not available.
 DriveROM: Error - 4000 ROM image not found. Hardware-level 4000 emulation is not available.
-Loading system file `C:\C64\Tools\Vice\DRIVES\dos2031'.
-Loading system file `C:\C64\Tools\Vice\DRIVES\dos2040'.
-Loading system file `C:\C64\Tools\Vice\DRIVES\dos3040'.
-Loading system file `C:\C64\Tools\Vice\DRIVES\dos4040'.
-Loading system file `C:\C64\Tools\Vice\DRIVES\dos1001'.
+Loading system file `C:\C64\Tools\Vice\DRIVES\dos1551'.
 Drive: Finished loading ROM images.
-VIC-II: Initializing chip model "MOS8565" (63 cycles per line, 312 raster lines).
+Sound: Available sound devices: dx wmm dummy fs dump wav voc iff aiff flac ogg soundmovie
 using GTK3 backend: OpenGL
 Creating GtkGlArea widget.
 Warning - GTKGL: OpenGL version 3.2 not supported in this context
 GdkGlkContext is in legacy (OpenGL 1.1) mode.
-Palette: Loading palette `C:\C64\Tools\Vice\C64\pepto-pal.vpl'.
-Sound: Available sound devices: dx wmm dummy fs dump wav voc iff aiff flac ogg soundmovie
-Keyboard: Loading keymap `C:\C64\Tools\Vice\C64\gtk3_sym.vkm'.
-Keyboard: Warning - gtk3_sym.vkm: !LCBM !VCBM !LCTRL !VCTRL not defined.
+Palette: Loading palette `C:\C64\Tools\Vice\PLUS4\yape-pal.vpl'.
+Keyboard: Loading keymap `C:\C64\Tools\Vice\PLUS4\gtk3_sym.vkm'.
+Keyboard: Warning - gtk3_sym.vkm:144: !RSHIFT defined but key does not use SHIFT flag
+Keyboard: Warning - gtk3_sym.vkm:145: !RSHIFT defined but key does not use SHIFT flag
+Keyboard: Warning - gtk3_sym.vkm:233: !RSHIFT defined but key does not use SHIFT flag
+Keyboard: Warning - gtk3_sym.vkm:235: !RSHIFT defined but key does not use SHIFT flag
+Keyboard: Warning - gtk3_sym.vkm: !LCBM !VCBM !LCTRL !VCTRL !SHIFTLnot defined.
 AUTOSTART: Autodetecting image type of `bin/main.prg'.
-Filesystem Image Probe: Error - Import GCR: Unknown GCR image version 50.
+Filesystem Image Probe: Error - Import GCR: Unknown GCR image version 52.
 Filesystem Image: Unknown disk image `bin/main.prg'.
 Tape: Error - Cannot open file `bin/main.prg'
-Error - CRT header invalid.
-CART: 'bin/main.prg' is not a valid CRT file.
 AUTOSTART: Loading PRG file `bin/main.prg' with direct RAM injection.
 AUTOSTART: Resetting the machine to autostart '*'
-VIC-II: VSP Bug: safe channels are: 012. Emulation of memory corruption is disabled.
+Sound: Opened device `dx', speed 44100Hz, fragment size fms, buffer size 200ms
+reSID: MOS6581, filter on, sampling rate 44100Hz - resampling, pass to 19845Hz
 AUTOSTART: Turning Warp mode on
 AUTOSTART: `bin/main.prg' recognized as program/p00 file.
 Main CPU: starting at ($FFFC).
 Main CPU: RESET.
-Sound: Opened device `dx', speed 44100Hz, fragment size fms, buffer size 101ms
-reSID: MOS8580, filter on, sampling rate 44100Hz - resampling, pass to 19845Hz
+RS232DEV: rs232dev_set_status: rts:off dtr:off
+RS232DEV: rs232dev_set_bps: bps: 10
 Drive 8: RESET.
-AUTOSTART: Injecting program data at $0800 (size $f728)
+RS232DEV: rs232dev_set_status: rts:off dtr:off
+AUTOSTART: Injecting program data at $1000 (size $442f)
+Skip line 312 312
 AUTOSTART: Ready
 AUTOSTART: Turning Warp mode off
 AUTOSTART: Starting program.
@@ -67,5 +68,4 @@ AUTOSTART: Done.
 Writing configuration file `C:\Users\Nick\AppData\Roaming\vice\vice.ini'.
 
 Exiting...
-VIC-II: VSP Bug: safe channels are: 234567. Emulation of memory corruption is disabled.
 Sound: Closing device `dx'

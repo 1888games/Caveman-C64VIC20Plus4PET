@@ -133,8 +133,6 @@ GameScreenRowMSB:
 
 		Hide:
 
-		sty Colour
-
 		.if(target == "PET") {
 			lda #BlankCharacter
 			sta Colour
