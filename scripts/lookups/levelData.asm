@@ -23,6 +23,11 @@ LEVELDATA:{
 			lda #71
 			sta ScreenPosition
 		}
+
+		.if(target == "PET") {
+			lda #26
+			sta ScreenPosition
+		}
 	
 		ldx NextLevelID
 		
@@ -95,16 +100,20 @@ LEVELDATA:{
 		iny
 		sta (SCREEN_RAM), y
 
-		lda #ONE
+		.if(target != "PET") {
 
-		.if(target == "264") {
-				clc
-				adc #96
-			}
+			lda #ONE
 
-		sta (COLOR_RAM), y
-		dey
-		sta (COLOR_RAM), y
+			.if(target == "264") {
+					clc
+					adc #96
+				}
+
+			sta (COLOR_RAM), y
+			dey
+			sta (COLOR_RAM), y
+
+		}
 
 		inc Ones
 		lda Ones

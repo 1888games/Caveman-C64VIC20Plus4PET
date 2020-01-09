@@ -283,13 +283,17 @@ SCORE:{
 
 			sta (SCREEN_RAM), y
 
-			lda #ONE
+			.if (target != "PET") {
 
-			.if(target == "264") {
-				clc
-				adc #96
+				lda #ONE
+
+				.if(target == "264") {
+					clc
+					adc #96
+				}
+				
+				sta (COLOR_RAM), y
 			}
-			sta (COLOR_RAM), y
 
 			tya
 			sec
@@ -362,13 +366,18 @@ SCORE:{
 
 			sta (SCREEN_RAM), y
 
-			lda #ONE
+			.if (target != "PET") {
 
-			.if(target == "264") {
-				clc
-				adc #96
+				lda #ONE
+
+				.if(target == "264") {
+					clc
+					adc #96
+				}
+				
+				sta (COLOR_RAM), y
+
 			}
-			sta (COLOR_RAM), y
 
 			tya
 			sec

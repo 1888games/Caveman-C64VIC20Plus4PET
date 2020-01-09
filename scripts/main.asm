@@ -128,7 +128,7 @@ TitleLoop: {
 		WaitForRasterLine(30)
 	}
 
-	.if(target == "264") {
+	.if(target == "264" || target == "PET") {
 		WaitForRasterLine(200)
 	}
 
@@ -138,8 +138,39 @@ TitleLoop: {
 	ldy #2
 	jsr INPUT.ReadJoystick
 
-	lda INPUT.FIRE_UP_THIS_FRAME, y
-	bne Instructions
+	.if(target != "PET") {
+		
+		lda INPUT.FIRE_UP_THIS_FRAME, y
+		bne Instructions
+
+	}
+
+	else {
+
+
+		lda INPUT.JOY_LEFT_NOW, y
+		bne Amateur
+
+		lda INPUT.JOY_RIGHT_NOW, y
+		bne Pro
+		
+		jmp TitleLoop
+
+		Pro:
+
+			lda #ONE
+			sta GameMode
+		
+			jmp LoadGame
+
+		Amateur:
+
+			lda #ZERO
+			sta GameMode
+			jmp LoadGame
+
+
+	}
 
 	jmp TitleLoop
 
@@ -249,7 +280,6 @@ InstructionsLoop:
 	jsr INPUT.ReadJoystick
 
 
-	
 	lda INPUT.JOY_LEFT_NOW, y
 	bne Amateur
 
@@ -423,6 +453,8 @@ NewGame: {
 	sta WaitingForFire
 	sta CAVEMAN.Cooldown
 
+	
+
 	rts
 	
 }
@@ -528,14 +560,18 @@ Reset:{
 
 LoadGame: {
 
+	ClearScreen()
+
 	jsr SetupGameColours
 	jsr SetupCharMemory
 
-	jsr MAPLOADER.DrawMap
-
-	jsr NewGame
 
 	
+	jsr MAPLOADER.DrawMap
+	
+	jsr NewGame
+
+
 	jmp Loop
 
 }
@@ -592,7 +628,7 @@ Loop:
 		WaitForRasterLine(30)
 	}
 
-	.if(target == "264") {
+	.if(target == "264" || target == "PET") {
 		WaitForRasterLine(200)
 	}
 

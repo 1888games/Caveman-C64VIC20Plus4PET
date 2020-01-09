@@ -61,6 +61,7 @@ DINO:{
 
 		jsr RANDOM.Get
 
+
 		cmp #85
 		bcc Left
 

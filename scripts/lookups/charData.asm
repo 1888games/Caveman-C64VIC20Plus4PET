@@ -115,7 +115,7 @@ CHAR_DATA:{
 
 		.if (target == "PET") {
 
-			.byte 8, 8, 8, 10, 8, 8, 8, 8, 8, 10, 10, 8// 0-11  	// BIRD
+			.byte 8, 8, 8, 10, 8, 8, 10, 8, 8, 10, 10, 8// 0-11  	// BIRD
 			.byte 2, 2, 2, 2, 2, 2, 2, 2, 4// 12- 20 		// EGGS
 			.byte 2, 2, 2, 2, 2, 2, 2, 2, 2 // EGGS  21 - 29
 			.byte 10, 12 // 20  		// BABIES 30-31
@@ -136,6 +136,7 @@ CHAR_DATA:{
 			.byte 2, 2, 2, 2, 2, 2// 91-96 lava
 			.byte 2, 2, 2, 2, 2, 2// 97-102 lava
 			.byte 2, 2, 2, 2, 2, 2// 103-108 lava
+			.byte 2, 2 // 109 - egg bird
 		
 
 		}
@@ -216,7 +217,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 15, 3, 16,  4, 15, 4, 16, 4
+					.byte 15, 3, 14,  4, 15, 4, 16, 4
 				}
 
 	Top_3:		.if (target == "C64" || target == "264") {			
@@ -228,7 +229,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 19, 3, 18,  4, 19, 4, 20, 4
+					.byte 19, 3, 18,  4, 19, 4, 20, 4, 19, 5
 				}
 
 
@@ -534,7 +535,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 38, 14, 39, 14, 38, 15, 39, 15, 38, 16, 39, 16
+					.byte 38, 13, 39, 13, 38, 14, 39, 14, 38, 15, 39, 15
 				}
 
 
@@ -670,7 +671,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 13, 14, 14, 14, 13, 15, 14, 15, 11, 15, 12, 15
+					.byte 13, 14, 14, 14, 13, 15, 14, 15, 15, 15, 16, 15
 				}
 
 	Died_3:		.if (target == "C64" || target == "264") {			
@@ -731,7 +732,7 @@ CHAR_DATA:{
  				}
 
 				.if (target == "PET") {
- 					.byte 31, 7, 32, 7, 33, 7, 34, 7, 35, 7, 32, 6, 33, 6, 34, 6, 37, 6
+ 					.byte 31, 7, 32, 7, 33, 7, 34, 7, 35, 7, 32, 6, 33, 6, 34, 6, 35, 6
  					.byte 33, 8, 34, 8, 35, 8, 34, 9, 35, 9
 
  				}
@@ -1178,8 +1179,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
-
+					.byte 7,7
 				}
 
 
@@ -1192,7 +1192,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 8,9
 
 				}
 
@@ -1206,7 +1206,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 7,11
 
 				}				
 
@@ -1220,7 +1220,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 8,15
 
 				}
 
@@ -1234,7 +1234,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 13,3
 
 				}
 
@@ -1250,7 +1250,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 12,5
 
 				}
 
@@ -1264,7 +1264,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 13,6
 
 				}
 
@@ -1278,7 +1278,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 12,8
 
 				}				
 
@@ -1292,7 +1292,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 12,9
 
 				}	
 
@@ -1305,7 +1305,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 13,13
 
 				}	
 
@@ -1319,7 +1319,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 17,3
 
 				}
 
@@ -1335,7 +1335,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 16,5
 
 				}
 
@@ -1349,7 +1349,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 17,7
 
 				}
 
@@ -1363,7 +1363,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 17,9
 
 				}				
 
@@ -1377,7 +1377,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 16,10
 
 				}
 
@@ -1390,7 +1390,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 17,13
 
 				}
 
@@ -1403,7 +1403,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 21,3
 
 				}
 
@@ -1419,8 +1419,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
-
+					.byte 20,5
 				}
 
 
@@ -1433,7 +1432,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 21,6
 
 				}
 
@@ -1447,7 +1446,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 20,8
 
 				}				
 
@@ -1461,7 +1460,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 19,9
 
 				}
 
@@ -1475,7 +1474,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 21,13
 
 				}
 
@@ -1488,8 +1487,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
-
+					.byte 25,3
 				}
 
 
@@ -1504,7 +1502,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 25,5
 
 				}
 
@@ -1518,7 +1516,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 23,7
 
 				}
 
@@ -1532,7 +1530,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 24,9
 
 				}				
 
@@ -1546,7 +1544,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 23,10
 
 				}
 
@@ -1560,7 +1558,7 @@ CHAR_DATA:{
 				}
 
 				.if (target == "PET") {
-					.byte 8,5
+					.byte 25,13
 
 				}
 

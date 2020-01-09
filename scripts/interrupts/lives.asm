@@ -97,14 +97,18 @@ LIVES:{
 			lda HeartCharacter
 
 			sta (SCREEN_RAM), y
-			lda #YELLOW
 
-			.if (target == "264") {
-				clc
-				adc #96
+			.if(target != "PET") {
+				lda #YELLOW
+
+				.if (target == "264") {
+					clc
+					adc #96
+				}
+
+				sta (COLOR_RAM), y
+
 			}
-
-			sta (COLOR_RAM), y
 			dec LivesLeft
 
 

@@ -32,6 +32,7 @@ LIONEL:{
  #import "vic20.asm"
  #import "plus4.asm"
  #import "input.asm"
+ #import "pet.asm"
 
 
 

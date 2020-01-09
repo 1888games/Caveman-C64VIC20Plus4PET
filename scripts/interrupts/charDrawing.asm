@@ -15,7 +15,7 @@ CHAR_DRAWING:{
 	.label COLOR_ADDRESS = VECTOR6
 	.label BUFFER_ADDRESS = VECTOR4
 
-	.label TotalObjects  =110 - 1
+	.label TotalObjects  =110- 1
 	.label BlankCharacter = 32
 
 

@@ -50,6 +50,11 @@ SOUND:{
 		.word $00A3, $00A7, $00AF, $00B3, $00B7, $00BB, $00BF, $00C3, $00C7, $00C9, $00CB, $00CF, $00D1, $00D4, $00D7, $00D9, $00DB, $00DD, $00DF, $00E1, $00E3, $00E4, $00E5, $00E7, $00E8, $00E9, $00EB, $00EC, $00ED, $00EE, $00EF, $00F0, $00F1, $00F2, $00F8, $00FB, $00FD, $00FE
 	}
 
+	.if(target == "PET") {
+	.word $5541, $5541, $0FFB, $0FEE, $0FE0, $0FD2, $0FC7, $0FBC, $0FB1, $0FA8, $0F9E, $0F95, $0F8C, $0F85, $0F7D, $0F76, $0F6E, $0F68, $0F63, $0F5D, $0F58, $0F53, $0F4E, $0F4A, $0F45, $0F41, $337D, $3376, $336E, $3368, $3363, $335D, $3358, $3353, $334E, $334A, $3345, $3341
+
+	}
+
 	Initialise: {
 
 		.if (target == "C64") {
@@ -59,6 +64,18 @@ SOUND:{
 			jsr StartSong
 
 
+		}
+
+		.if(target == "PET") {
+
+
+			lda #ONE
+			sta MaxChannels
+
+			lda #16
+			sta PET.SoundOnOff
+
+		
 		}
 
 		.if(target == "264") {
@@ -236,6 +253,11 @@ SOUND:{
 			jsr PLUS4.StopNote
 		}
 
+		.if(target == "PET") {
+
+			jsr PET.StopNote
+		}
+
 		rts
 
 	}
@@ -258,6 +280,10 @@ SOUND:{
 			jsr PLUS4.PlayNote
 		}
 
+		.if(target == "PET") {
+
+			jsr PET.PlayNote
+		}
 
 		rts
 

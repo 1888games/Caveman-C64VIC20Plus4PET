@@ -46,7 +46,7 @@
  .eval rasterLineRegisters.put("C64",$d012)
  .eval rasterLineRegisters.put("264",$FF1D)
  .eval rasterLineRegisters.put("VIC",$9004)
- .eval rasterLineRegisters.put("PET",$9999)
+ .eval rasterLineRegisters.put("PET",$E840)
 
  .var verticalControlRegisters = Hashtable()
  .eval verticalControlRegisters.put("C64",$d011)
@@ -55,6 +55,7 @@
  .eval verticalControlRegisters.put("PET",$9999)
 
  .label C64_ScreenControl = $d011
+ .label PET_Raster_Mask = %00100000
 
 
 VIDEO: {
@@ -303,11 +304,12 @@ VIDEO: {
 
 			ldx #ZERO
 			iny	
-			cpy #9
+			cpy #7
 
 			beq Finish
 			jmp xLoop
-	}
+
+		}
 
 	Loop: 
 
